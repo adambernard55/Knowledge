@@ -21,6 +21,7 @@ jobs:
         uses: tj-actions/changed-files@v40
         with:
           files: 'SEO/**/*.md'
+          separator: '\n'
 
       - name: Sync to BetterDocs
         if: steps.changed-files.outputs.any_changed == 'true'
@@ -31,7 +32,8 @@ jobs:
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
         run: |
-          echo "${{ steps.changed-files.outputs.all_changed_files }}" | while read -r file; do
+          IFS=$'\n'
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             [ -z "$file" ] && continue
             
             echo "Processing: $file"
