@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
       - name: Get changed files
         id: changed-files
@@ -33,151 +31,53 @@ jobs:
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
         run: |
-          # Check if jq is available
-          if ! command -v jq &> /dev/null; then
-            echo "Error: jq is not installed"
-            exit 1
-          fi
-          
-          echo "Starting sync process..."
-          
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "Processing: $file"
             
-            # Extract filename without extension for title
             filename=$(basename "$file" .md)
-            title=$(echo "$filename" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1')
+            title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
             
-            # Read markdown content
             content=$(cat "$file")
             
             # Extract front matter if exists
+            excerpt=""
             if grep -q "^---$" "$file"; then
               front_matter=$(sed -n '/^---$/,/^---$/p' "$file" | sed '1d;$d')
               
-              # Try to extract title from front matter
               fm_title=$(echo "$front_matter" | grep -i "^title:" | sed 's/^title: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
               if [ ! -z "$fm_title" ]; then
                 title="$fm_title"
               fi
               
-              # Extract excerpt
               excerpt=$(echo "$front_matter" | grep -i "^excerpt:" | sed 's/^excerpt: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
               
-              # Remove front matter from content
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
             fi
             
-            # Create Basic Auth header
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
-            # Check if post already exists by title
-            echo "Checking if post exists: $title"
-            existing=$(curl -s -w "\n%{http_code}" \
-              -H "Authorization: Basic $auth_header" \
-              "$WP_URL/wp-json/wp/v2/docs?search=$title&per_page=1")
-            
-            search_http_code=$(echo "$existing" | tail -n1)
-            search_body=$(echo "$existing" | sed '$d')
-            
-            echo "Search response (HTTP $search_http_code):"
-            echo "$search_body"
-            
-            if [ "$search_http_code" -ne 200 ]; then
-              echo "⚠ Warning: Could not search for existing posts. Will create new post."
-              post_id=""
-            else
-              post_id=$(echo "$search_body" | jq -r '.[0].id // empty')
-            fi
-            
-            # Prepare JSON payload
+            # Prepare JSON - simpler approach
             if [ ! -z "$excerpt" ]; then
-              json_payload=$(jq -n \
-                --arg title "$title" \
-                --arg content "$content" \
-                --arg excerpt "$excerpt" \
-                --arg category "$CATEGORY_ID" \
-                '{
-                  title: $title,
-                  content: $content,
-                  excerpt: $excerpt,
-                  status: "publish",
-                  doc_category: [$category | tonumber]
-                }')
+              json_payload="{\"title\":\"$title\",\"content\":\"$content\",\"excerpt\":\"$excerpt\",\"status\":\"publish\",\"doc_category\":[$CATEGORY_ID]}"
             else
-              json_payload=$(jq -n \
-                --arg title "$title" \
-                --arg content "$content" \
-                --arg category "$CATEGORY_ID" \
-                '{
-                  title: $title,
-                  content: $content,
-                  status: "publish",
-                  doc_category: [$category | tonumber]
-                }')
+              json_payload="{\"title\":\"$title\",\"content\":\"$content\",\"status\":\"publish\",\"doc_category\":[$CATEGORY_ID]}"
             fi
             
-            echo "Payload prepared for: $title"
+            echo "Creating/updating post: $title"
             
-            if [ -z "$post_id" ]; then
-              # Create new post
-              echo "Creating new post: $title"
-              
-              response=$(curl -s -w "\n%{http_code}" \
-                -X POST \
-                -H "Authorization: Basic $auth_header" \
-                -H "Content-Type: application/json" \
-                -d "$json_payload" \
-                "$WP_URL/wp-json/wp/v2/docs")
-            else
-              # Update existing post
-              echo "Updating existing post: $title (ID: $post_id)"
-              
-              response=$(curl -s -w "\n%{http_code}" \
-                -X POST \
-                -H "Authorization: Basic $auth_header" \
-                -H "Content-Type: application/json" \
-                -d "$json_payload" \
-                "$WP_URL/wp-json/wp/v2/docs/$post_id")
-            fi
+            response=$(curl -s -w "\n%{http_code}" \
+              -X POST \
+              -H "Authorization: Basic $auth_header" \
+              -H "Content-Type: application/json" \
+              -d "$json_payload" \
+              "$WP_URL/wp-json/wp/v2/docs")
             
             http_code=$(echo "$response" | tail -n1)
             body=$(echo "$response" | sed '$d')
             
             if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 201 ]; then
               echo "✓ Successfully synced: $title"
-              
-              # Extract post ID
-              post_id=$(echo "$body" | jq -r '.id')
-              echo "Post ID: $post_id"
-              echo "URL: $WP_URL/docs/$(echo "$body" | jq -r '.slug')"
-              
-              # Generate embeddings with AI Engine
-              echo "Generating embeddings for post $post_id..."
-              
-              embed_payload=$(jq -n \
-                --arg post_id "$post_id" \
-                '{
-                  postId: ($post_id | tonumber),
-                  envId: "default"
-                }')
-              
-              embed_response=$(curl -s -w "\n%{http_code}" \
-                -X POST \
-                -H "Authorization: Bearer $BEARER_TOKEN" \
-                -H "Content-Type: application/json" \
-                -d "$embed_payload" \
-                "$WP_URL/wp-json/mwai/v1/vectors/add")
-              
-              embed_http_code=$(echo "$embed_response" | tail -n1)
-              embed_body=$(echo "$embed_response" | sed '$d')
-              
-              if [ "$embed_http_code" -eq 200 ]; then
-                echo "✓ Embeddings generated and stored in Pinecone"
-              else
-                echo "⚠ Embedding generation skipped or failed (HTTP $embed_http_code)"
-                echo "$embed_body"
-              fi
+              echo "$body"
             else
               echo "✗ Failed to sync: $title (HTTP $http_code)"
               echo "$body"
@@ -189,5 +89,4 @@ jobs:
       - name: Summary
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          echo "✅ Sync completed!"
-          echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "Sync completed"
