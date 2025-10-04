@@ -16,6 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install markdown converter
+        run: npm install -g marked
+
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v40
@@ -60,13 +68,16 @@ jobs:
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
             fi
             
+            # Convert markdown to HTML
+            html_content=$(echo "$content" | marked)
+            
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
             # Use jq to properly escape JSON
             if [ ! -z "$excerpt" ]; then
               json_payload=$(jq -n \
                 --arg title "$title" \
-                --arg content "$content" \
+                --arg content "$html_content" \
                 --arg excerpt "$excerpt" \
                 --argjson category "$CATEGORY_ID" \
                 '{
@@ -79,7 +90,7 @@ jobs:
             else
               json_payload=$(jq -n \
                 --arg title "$title" \
-                --arg content "$content" \
+                --arg content "$html_content" \
                 --argjson category "$CATEGORY_ID" \
                 '{
                   title: $title,
@@ -121,9 +132,9 @@ jobs:
               embed_http_code=$(echo "$embed_response" | tail -n1)
               
               if [ "$embed_http_code" -eq 200 ]; then
-                echo "✓ Embeddings generated"
+                echo "✓ Embeddings generated and stored in Pinecone"
               else
-                echo "⚠ Embedding generation failed"
+                echo "⚠ Embedding generation failed (HTTP $embed_http_code)"
               fi
             else
               echo "✗ Failed to sync: $title (HTTP $http_code)"
@@ -136,4 +147,4 @@ jobs:
       - name: Summary
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          echo "Sync completed"
+          echo "✅ Sync completed!"
