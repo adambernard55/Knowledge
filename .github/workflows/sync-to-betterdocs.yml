@@ -16,13 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install markdown converter
-        run: npm install -g marked
+      - name: Install pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
 
       - name: Get changed files
         id: changed-files
@@ -40,7 +37,6 @@ jobs:
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          # Convert space-separated list to array
           IFS=' ' read -r -a files <<< "$CHANGED_FILES"
           
           for file in "${files[@]}"; do
@@ -68,8 +64,12 @@ jobs:
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
             fi
             
-            # Convert markdown to HTML
-            html_content=$(echo "$content" | marked)
+            # Save content to temp file and convert with pandoc
+            echo "$content" > /tmp/content.md
+            html_content=$(pandoc -f markdown -t html /tmp/content.md)
+            
+            echo "Content length: ${#content} chars"
+            echo "HTML length: ${#html_content} chars"
             
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
@@ -147,4 +147,4 @@ jobs:
       - name: Summary
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          echo "✅ Sync completed!"
+          echo "Sync completed"
