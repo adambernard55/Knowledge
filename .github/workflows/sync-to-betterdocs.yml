@@ -31,7 +31,9 @@ jobs:
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "${{ steps.changed-files.outputs.all_changed_files }}" | while read -r file; do
+            [ -z "$file" ] && continue
+            
             echo "Processing: $file"
             
             filename=$(basename "$file" .md)
@@ -56,11 +58,31 @@ jobs:
             
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
-            # Prepare JSON - simpler approach
+            # Use jq to properly escape JSON
             if [ ! -z "$excerpt" ]; then
-              json_payload="{\"title\":\"$title\",\"content\":\"$content\",\"excerpt\":\"$excerpt\",\"status\":\"publish\",\"doc_category\":[$CATEGORY_ID]}"
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$content" \
+                --arg excerpt "$excerpt" \
+                --argjson category "$CATEGORY_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  excerpt: $excerpt,
+                  status: "publish",
+                  doc_category: [$category]
+                }')
             else
-              json_payload="{\"title\":\"$title\",\"content\":\"$content\",\"status\":\"publish\",\"doc_category\":[$CATEGORY_ID]}"
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$content" \
+                --argjson category "$CATEGORY_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  status: "publish",
+                  doc_category: [$category]
+                }')
             fi
             
             echo "Creating/updating post: $title"
@@ -77,7 +99,28 @@ jobs:
             
             if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 201 ]; then
               echo "✓ Successfully synced: $title"
-              echo "$body"
+              post_id=$(echo "$body" | jq -r '.id')
+              echo "Post ID: $post_id"
+              echo "URL: $WP_URL/docs/$(echo "$body" | jq -r '.slug')"
+              
+              # Generate embeddings
+              echo "Generating embeddings..."
+              embed_payload=$(jq -n --argjson post_id "$post_id" '{postId: $post_id, envId: "default"}')
+              
+              embed_response=$(curl -s -w "\n%{http_code}" \
+                -X POST \
+                -H "Authorization: Bearer $BEARER_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$embed_payload" \
+                "$WP_URL/wp-json/mwai/v1/vectors/add")
+              
+              embed_http_code=$(echo "$embed_response" | tail -n1)
+              
+              if [ "$embed_http_code" -eq 200 ]; then
+                echo "✓ Embeddings generated"
+              else
+                echo "⚠ Embedding generation failed"
+              fi
             else
               echo "✗ Failed to sync: $title (HTTP $http_code)"
               echo "$body"
