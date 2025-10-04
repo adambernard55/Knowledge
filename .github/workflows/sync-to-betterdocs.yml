@@ -33,6 +33,14 @@ jobs:
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
         run: |
+          # Check if jq is available
+          if ! command -v jq &> /dev/null; then
+            echo "Error: jq is not installed"
+            exit 1
+          fi
+          
+          echo "Starting sync process..."
+          
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "Processing: $file"
             
@@ -65,28 +73,51 @@ jobs:
             
             # Check if post already exists by title
             echo "Checking if post exists: $title"
-            existing=$(curl -s \
+            existing=$(curl -s -w "\n%{http_code}" \
               -H "Authorization: Basic $auth_header" \
               "$WP_URL/wp-json/wp/v2/docs?search=$title&per_page=1")
             
-            post_id=$(echo "$existing" | jq -r '.[0].id // empty')
+            search_http_code=$(echo "$existing" | tail -n1)
+            search_body=$(echo "$existing" | sed '$d')
+            
+            echo "Search response (HTTP $search_http_code):"
+            echo "$search_body"
+            
+            if [ "$search_http_code" -ne 200 ]; then
+              echo "⚠ Warning: Could not search for existing posts. Will create new post."
+              post_id=""
+            else
+              post_id=$(echo "$search_body" | jq -r '.[0].id // empty')
+            fi
             
             # Prepare JSON payload
-            json_payload=$(jq -n \
-              --arg title "$title" \
-              --arg content "$content" \
-              --arg excerpt "${excerpt:-}" \
-              --arg category "$CATEGORY_ID" \
-              '{
-                title: $title,
-                content: $content,
-                status: "publish",
-                doc_category: [$category | tonumber]
-              }')
-            
             if [ ! -z "$excerpt" ]; then
-              json_payload=$(echo "$json_payload" | jq --arg excerpt "$excerpt" '. + {excerpt: $excerpt}')
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$content" \
+                --arg excerpt "$excerpt" \
+                --arg category "$CATEGORY_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  excerpt: $excerpt,
+                  status: "publish",
+                  doc_category: [$category | tonumber]
+                }')
+            else
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$content" \
+                --arg category "$CATEGORY_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  status: "publish",
+                  doc_category: [$category | tonumber]
+                }')
             fi
+            
+            echo "Payload prepared for: $title"
             
             if [ -z "$post_id" ]; then
               # Create new post
