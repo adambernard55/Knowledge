@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'SEO/**/*.md'
+  workflow_dispatch:
 
 jobs:
   sync-docs:
@@ -23,9 +24,11 @@ jobs:
         with:
           files: 'SEO/**/*.md'
 
-      - name: Sync to BetterDocs with AI Engine
+      - name: Sync to BetterDocs
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
           BEARER_TOKEN: ${{ secrets.AIENGINE_BEARER_TOKEN }}
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
@@ -35,14 +38,13 @@ jobs:
             
             # Extract filename without extension for title
             filename=$(basename "$file" .md)
-            title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+            title=$(echo "$filename" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1')
             
             # Read markdown content
             content=$(cat "$file")
             
-            # Extract front matter if exists (title, excerpt, etc.)
+            # Extract front matter if exists
             if grep -q "^---$" "$file"; then
-              # Has front matter
               front_matter=$(sed -n '/^---$/,/^---$/p' "$file" | sed '1d;$d')
               
               # Try to extract title from front matter
@@ -51,65 +53,99 @@ jobs:
                 title="$fm_title"
               fi
               
+              # Extract excerpt
+              excerpt=$(echo "$front_matter" | grep -i "^excerpt:" | sed 's/^excerpt: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
+              
               # Remove front matter from content
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
             fi
             
-            # Prepare JSON payload for AI Engine
+            # Create Basic Auth header
+            auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
+            
+            # Check if post already exists by title
+            echo "Checking if post exists: $title"
+            existing=$(curl -s \
+              -H "Authorization: Basic $auth_header" \
+              "$WP_URL/wp-json/wp/v2/docs?search=$title&per_page=1")
+            
+            post_id=$(echo "$existing" | jq -r '.[0].id // empty')
+            
+            # Prepare JSON payload
             json_payload=$(jq -n \
               --arg title "$title" \
               --arg content "$content" \
+              --arg excerpt "${excerpt:-}" \
               --arg category "$CATEGORY_ID" \
               '{
-                post_type: "docs",
-                post_title: $title,
-                post_content: $content,
-                post_status: "publish",
-                tax_input: {
-                  doc_category: [$category]
-                }
+                title: $title,
+                content: $content,
+                status: "publish",
+                doc_category: [$category | tonumber]
               }')
             
-            echo "Creating/updating post: $title"
+            if [ ! -z "$excerpt" ]; then
+              json_payload=$(echo "$json_payload" | jq --arg excerpt "$excerpt" '. + {excerpt: $excerpt}')
+            fi
             
-            # Call AI Engine API to create post
-            response=$(curl -s -w "\n%{http_code}" \
-              -X POST \
-              -H "Authorization: Bearer $BEARER_TOKEN" \
-              -H "Content-Type: application/json" \
-              -d "$json_payload" \
-              "$WP_URL/wp-json/mwai/v1/helpers/create_post")
+            if [ -z "$post_id" ]; then
+              # Create new post
+              echo "Creating new post: $title"
+              
+              response=$(curl -s -w "\n%{http_code}" \
+                -X POST \
+                -H "Authorization: Basic $auth_header" \
+                -H "Content-Type: application/json" \
+                -d "$json_payload" \
+                "$WP_URL/wp-json/wp/v2/docs")
+            else
+              # Update existing post
+              echo "Updating existing post: $title (ID: $post_id)"
+              
+              response=$(curl -s -w "\n%{http_code}" \
+                -X POST \
+                -H "Authorization: Basic $auth_header" \
+                -H "Content-Type: application/json" \
+                -d "$json_payload" \
+                "$WP_URL/wp-json/wp/v2/docs/$post_id")
+            fi
             
             http_code=$(echo "$response" | tail -n1)
             body=$(echo "$response" | sed '$d')
             
-            if [ "$http_code" -eq 200 ]; then
+            if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 201 ]; then
               echo "✓ Successfully synced: $title"
-              echo "$body"
               
-              # Extract post ID from response
-              post_id=$(echo "$body" | jq -r '.post_id // .id // empty')
+              # Extract post ID
+              post_id=$(echo "$body" | jq -r '.id')
+              echo "Post ID: $post_id"
+              echo "URL: $WP_URL/docs/$(echo "$body" | jq -r '.slug')"
               
-              if [ ! -z "$post_id" ]; then
-                echo "Post ID: $post_id"
-                
-                # Optionally: Trigger embedding generation
-                echo "Generating embeddings for post $post_id..."
-                
-                embed_response=$(curl -s -w "\n%{http_code}" \
-                  -X POST \
-                  -H "Authorization: Bearer $BEARER_TOKEN" \
-                  -H "Content-Type: application/json" \
-                  -d "{\"postId\": $post_id, \"envId\": \"default\"}" \
-                  "$WP_URL/wp-json/mwai/v1/vectors/add")
-                
-                embed_http_code=$(echo "$embed_response" | tail -n1)
-                
-                if [ "$embed_http_code" -eq 200 ]; then
-                  echo "✓ Embeddings generated successfully"
-                else
-                  echo "⚠ Embedding generation failed or not configured"
-                fi
+              # Generate embeddings with AI Engine
+              echo "Generating embeddings for post $post_id..."
+              
+              embed_payload=$(jq -n \
+                --arg post_id "$post_id" \
+                '{
+                  postId: ($post_id | tonumber),
+                  envId: "default"
+                }')
+              
+              embed_response=$(curl -s -w "\n%{http_code}" \
+                -X POST \
+                -H "Authorization: Bearer $BEARER_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$embed_payload" \
+                "$WP_URL/wp-json/mwai/v1/vectors/add")
+              
+              embed_http_code=$(echo "$embed_response" | tail -n1)
+              embed_body=$(echo "$embed_response" | sed '$d')
+              
+              if [ "$embed_http_code" -eq 200 ]; then
+                echo "✓ Embeddings generated and stored in Pinecone"
+              else
+                echo "⚠ Embedding generation skipped or failed (HTTP $embed_http_code)"
+                echo "$embed_body"
               fi
             else
               echo "✗ Failed to sync: $title (HTTP $http_code)"
@@ -122,5 +158,5 @@ jobs:
       - name: Summary
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          echo "Sync completed!"
+          echo "✅ Sync completed!"
           echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
