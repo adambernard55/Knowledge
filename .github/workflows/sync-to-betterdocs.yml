@@ -21,7 +21,6 @@ jobs:
         uses: tj-actions/changed-files@v40
         with:
           files: 'SEO/**/*.md'
-          separator: '\n'
 
       - name: Sync to BetterDocs
         if: steps.changed-files.outputs.any_changed == 'true'
@@ -31,9 +30,12 @@ jobs:
           BEARER_TOKEN: ${{ secrets.AIENGINE_BEARER_TOKEN }}
           WP_URL: ${{ secrets.WP_SITE_URL }}
           CATEGORY_ID: ${{ secrets.BETTERDOCS_SEO_CATEGORY_ID }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          IFS=$'\n'
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          # Convert space-separated list to array
+          IFS=' ' read -r -a files <<< "$CHANGED_FILES"
+          
+          for file in "${files[@]}"; do
             [ -z "$file" ] && continue
             
             echo "Processing: $file"
