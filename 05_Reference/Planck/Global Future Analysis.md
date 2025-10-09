@@ -1,1 +1,0 @@
-![[Global-Future-Analysis.pdf]]
