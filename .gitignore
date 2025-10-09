@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ============================================
 # IGNORE EVERYTHING BY DEFAULT
 # ============================================
@@ -31,3 +32,8 @@
 Thumbs.db
 desktop.ini
 .trash/
+=======
+.DS_Store
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+>>>>>>> 35015865deb2534cd0360e782bf93130b7c06c45
