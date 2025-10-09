@@ -1,0 +1,58 @@
+_**Planck Foundation advocates regarding economic sciences:**_
+
+- a less energy intensive economic design that increases/ensures global prosperity (sustainable prosperity)
+- a cherry picking transformation from global to local focused production (mainly energy price rise driven)
+- a balanced global/local economic model that can easily serve the earth's future projected population (9 billion)
+- debunking the malthusian overpopulation theory (sustainable prosperity pushes the malthusian boundaries always)
+- a fair/open play field for all market parties (no preferred rights to governmental officials/organization relations)
+- a design for energy extensive information/communication technologies (full online html5 based virtual screen technology)
+- due to new info/com technologies commuting can be rated as time/energy waste (huge new time/energy resource)
+- a maximal flexible labour market model (not 9 to 5 based, less office based, in combination with easy-hire/easy-fire)
+- an open tech database where public domain tech is listed (preventing others to patent existing open developments)
+- centralism will collapse for the same reason communism has collapsed (too vulnerable for abuse due non transparency)
+- any democracy without an active critical press always turns into an oligarchy (as power concentrates and corrupts)
+- democracy in general reality is far away from the concept idea (just like communism was too and capitalism is too)
+- economic democracy (people 'voting' by their purchases) will replace parliamentary democracy severely
+- distance and democracy are inversely proportional and distance and corruption are equally proportional
+- in most democracies lobbyists and interest groups democracy have a bigger influence on government than voters
+- the current bailout bonanza illustrates that western democracy need some serious introspection on its functioning
+- the current version of western democracy is severely overrated (actual reality is not government for/by the people)
+- the current version of western capitalism is severely overrated (as it subsidizes malfunctioning companies big time)
+- western democracy and western capitalism need introspection and reform (otherwise they're heading towards disaster)
+- if western democracy and western capitalism are not able to reform themselves they will go under by white collar crime
+- capitalism that parasites on governmental budgets is no capitalism at all (it erodes both capitalism and democracy)
+- oligarchy is by its nature against free markets / fair competition and parasites at max on governmental budgets
+- media fragmentation delivered by web 2.0 technology is crushing media concentrations and unlocking crowd sourcing
+- free/fair markets need a limited but crucial set of free market rules and law enforcement to enforce this rules
+- free/fair markets need an active/independent press for early signaling any derailing of the concept by special interests
+- consumer organizations are much more effective in representing consumer interests than state consumer protection
+- state consumer protecting organizations have the tendency to serve the corporate instead of the consumer interests
+- in advanced economies construction will become a secondary sector (difficult to finance due peakcapital)
+- the effects of a huge CME originated strong EMP in a digital era are totally underestimated (it can wipe out all ICs)
+- a focus on energy conservation construction changes will deliver a new economic sector (energy price rise related)
+- increasing suburbanization as the right direction (as cities will be too energy intensive to deliver/maintain prosperity)
+- sunspot quantity inversely effects food prices and drives by this also inflation plus GDP (due to civil unrest level)
+- a multipolar world without monopolar leadership (to prevent easy developments in the wrong directions)
+- unless financials will hedge declining currency values with increasing energy values the financial system will break
+- new induction based railways will be developed on all continents in all directions: north/south, east/west and diagonal
+- quantum dots based third generation PV tech will deliver to each man made object energy harvesting skin options
+- quantum dots based technology will make it possible to deliver energy harvesting transparent foil for new/old windows
+- besides quantum dots PV cells new hydrogen production based solar cells (artificial leaf tech) will make emerge ([link](http://www.youtube.com/watch?v=D3HNrAGWoAI))
+- IPR (intellectual property rights) slow down economic growth severely (copying delivers much faster economic growth)
+- IPR will be eroded/disarmed by the current information floods and crowd sourcing (hard to prove first time uniqueness)
+- IPR will find combatants on it's way as crowd sourcing develops in high speed (already done in open source software)
+- global warming thesis based decisions turns out very damaging for the economy (as global cooling is what face)
+- the global warming thesis has impact on the railroad infra (teflon grease free rail road points without winter heating)
+- the global warming thesis has impact on the railroad wagons (bad equipment isolation puts them out of order by cold)
+- the global warming thesis has impact on wheat storage/prices (drying facilities are decommissioned based on this thesis)
+- global warming thesis based investments are a capital waste of resources usage (as global cooling is what we face)
+- rhineland (ego and alterego driven) capitalism will stongly compete with angloamerican (ego only driven) capitalism
+- geothermal and deserttech (fuelless/limitless/endless) will replace both coal and nuclear based on economical factors
+- geothermal energy exploration of hotrock spots by pressurized seawater injection (limitless/endless/fuelless) ([link](http://www.universetoday.com/wp-content/uploads/2009/11/800px-Geothermal_hotspots.JPG))
+- geothermal energy exploration of hot aquifers by closed water cycles (limitless, endless, fuelless, no water demand)
+- deserttech is about sun light concentration that heats water that drives turbines (clean/sweet water as side product)
+- deserttech is about on location in mobile factories build out of sand/silica solar mirror plants (50% price of desertec)
+- geothermal and deserttech will deliver new energy surplus nations and thereby shake up the global economic/power field
+- use of quantitative easing fully focused on energy investments (percolating up - currency/asset value - future strength)
+
+_**Planck Foundation produces analyses and models based on these issues and also is lobbying intensively for these issues.**_

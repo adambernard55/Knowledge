@@ -1,0 +1,33 @@
+# ============================================
+# IGNORE EVERYTHING BY DEFAULT
+# ============================================
+*
+
+# ============================================
+# THEN EXPLICITLY INCLUDE WHAT WE WANT
+# ============================================
+
+# Always include these
+!.gitignore
+!.github/
+!.github/**
+
+# Include Knowledge folder and contents
+!Knowledge/
+!Knowledge/**
+
+# ============================================
+# OBSIDIAN CONFIG
+# ============================================
+# Exclude workspace files (personal settings)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.trash/
