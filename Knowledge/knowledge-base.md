@@ -1,5 +1,5 @@
 ---
-title: "Knowledge"
+title: "Knowledge Base"
 description: "Central index of the Knowledge system, connecting AI, SEO, and Tools knowledge bases with shared structure, metadata, and cross‑disciplinary links."
 seo_category: "knowledge-base"
 difficulty: "beginner"
