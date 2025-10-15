@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"e4d44df6a563a4b0","x":-560,"y":-400,"width":400,"height":700,"type":"file","file":"Knowledge/AI/AI Knowledge Base.md"},
+		{"id":"137184e17cdcfa8c","type":"file","file":"Knowledge/SEO/SEO Knowledge Base.md","x":-60,"y":-400,"width":400,"height":700}
+	],
+	"edges":[]
+}

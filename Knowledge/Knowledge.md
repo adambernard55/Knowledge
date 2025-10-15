@@ -21,12 +21,15 @@ related_topics:
   - eeat-signals
   - tool-database-structure
 ---
-
 # Knowledge Base Contents
 
 The **Knowledge Base** serves as the central hub connecting cross‑domain guides and reference structures across AI, SEO, and the shared Tools ecosystems.
 
-### Index
-- [[AI Knowledge Base]]
-- [[SEO Knowledge Base]]
-- [[Tools Knowledge Base]]
+### Primary Contents
+### - [[AI Knowledge Base]]
+### - [[SEO Knowledge Base]]
+### - [[Tools Knowledge Base]]
+
+```dataview 
+TABLE WITHOUT ID key AS "Table of Contents" FROM "Knowledge" GROUP BY file.folder SORT key ASC
+```
