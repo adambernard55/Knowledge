@@ -1,0 +1,167 @@
+name: Sync SEO to Knowledge Base
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Knowledge/SEO/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: 'Knowledge/SEO/**/*.md'
+
+      - name: Sync to Knowledge Base
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          BEARER_TOKEN: ${{ secrets.AIENGINE_BEARER_TOKEN }}
+          WP_URL: ${{ secrets.WP_SITE_URL }}
+          TOPIC_ID: ${{ secrets.KNOWLEDGE_SEO_TOPIC_ID }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          IFS=' ' read -r -a files <<< "$CHANGED_FILES"
+          
+          for file in "${files[@]}"; do
+            [ -z "$file" ] && continue
+            
+            echo "Processing: $file"
+            
+            filename=$(basename "$file" .md)
+            title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+            
+            content=$(cat "$file")
+            
+            # Extract front matter if exists
+            excerpt=""
+            if grep -q "^---$" "$file"; then
+              front_matter=$(sed -n '/^---$/,/^---$/p' "$file" | sed '1d;$d')
+              
+              fm_title=$(echo "$front_matter" | grep -i "^title:" | sed 's/^title: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
+              if [ ! -z "$fm_title" ]; then
+                title="$fm_title"
+              fi
+              
+              excerpt=$(echo "$front_matter" | grep -i "^excerpt:" | sed 's/^excerpt: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
+              
+              content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
+            fi
+            
+            # Convert Obsidian wikilinks to markdown links
+            content=$(echo "$content" | sed 's/\[\[\([^]|]*\)|\([^]]*\)\]\]/[\2](\1)/g')
+            content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](\1)/g')
+            content=$(echo "$content" | sed 's/!\[\[\([^]]*\)\]\]/![](\1)/g')
+            
+            # Save content to temp file and convert with pandoc
+            echo "$content" > /tmp/content.md
+            
+            if ! html_content=$(pandoc \
+              -f markdown+smart \
+              -t html \
+              --wrap=none \
+              /tmp/content.md 2>&1); then
+              echo "⚠ Pandoc conversion failed for $file"
+              echo "Error: $html_content"
+              continue
+            fi
+            
+            echo "Content length: ${#content} chars"
+            echo "HTML length: ${#html_content} chars"
+            
+            if [ -z "$html_content" ]; then
+              echo "⚠ HTML content is empty, skipping"
+              continue
+            fi
+            
+            auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
+            
+            if [ ! -z "$excerpt" ]; then
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$html_content" \
+                --arg excerpt "$excerpt" \
+                --argjson topic "$TOPIC_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  excerpt: $excerpt,
+                  status: "publish",
+                  knowledge_topic: [$topic]
+                }')
+            else
+              json_payload=$(jq -n \
+                --arg title "$title" \
+                --arg content "$html_content" \
+                --argjson topic "$TOPIC_ID" \
+                '{
+                  title: $title,
+                  content: $content,
+                  status: "publish",
+                  knowledge_topic: [$topic]
+                }')
+            fi
+            
+            echo "Creating/updating post: $title"
+            
+            response=$(curl -s -w "\n%{http_code}" \
+              -X POST \
+              -H "Authorization: Basic $auth_header" \
+              -H "Content-Type: application/json" \
+              -d "$json_payload" \
+              "$WP_URL/wp-json/wp/v2/knowledge")
+            
+            http_code=$(echo "$response" | tail -n1)
+            body=$(echo "$response" | sed '$d')
+            
+            if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 201 ]; then
+              echo "✓ Successfully synced: $title"
+              post_id=$(echo "$body" | jq -r '.id')
+              echo "Post ID: $post_id"
+              
+              # Generate embeddings
+              echo "Generating embeddings..."
+              embed_payload=$(jq -n --argjson post_id "$post_id" '{postId: $post_id, envId: "default"}')
+              
+              embed_response=$(curl -s -w "\n%{http_code}" \
+                -X POST \
+                -H "Authorization: Bearer $BEARER_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$embed_payload" \
+                "$WP_URL/wp-json/mwai/v1/vectors/add")
+              
+              embed_http_code=$(echo "$embed_response" | tail -n1)
+              
+              if [ "$embed_http_code" -eq 200 ]; then
+                echo "✓ Embeddings generated and stored in Pinecone"
+              else
+                echo "⚠ Embedding generation failed (HTTP $embed_http_code)"
+              fi
+            else
+              echo "✗ Failed to sync: $title (HTTP $http_code)"
+              echo "$body"
+            fi
+            
+            echo "---"
+          done
+          
+      - name: Summary
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "SEO sync completed"
