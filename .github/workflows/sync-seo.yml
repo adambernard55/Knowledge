@@ -34,7 +34,7 @@ jobs:
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
           BEARER_TOKEN: ${{ secrets.AIENGINE_BEARER_TOKEN }}
           WP_URL: ${{ secrets.WP_SITE_URL }}
-          TOPIC_ID: ${{ secrets.KNOWLEDGE_SEO_TOPIC_ID }}
+          DEFAULT_TOPIC_ID: ${{ secrets.KNOWLEDGE_SEO_TOPIC_ID }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           IFS=' ' read -r -a files <<< "$CHANGED_FILES"
@@ -43,6 +43,27 @@ jobs:
             [ -z "$file" ] && continue
             
             echo "Processing: $file"
+            
+            # Determine topic based on subfolder
+            TOPIC_ID=$DEFAULT_TOPIC_ID
+            case "$file" in
+              *"/0_fundamentals/"*) TOPIC_ID=1162 ;;
+              *"/fundamentals/"*) TOPIC_ID=1162 ;;
+              *"/1_research-and-strategy/"*) TOPIC_ID=1163 ;;
+              *"/research-and-strategy/"*) TOPIC_ID=1163 ;;
+              *"/2_content-and-on-page/"*) TOPIC_ID=1164 ;;
+              *"/content-and-on-page/"*) TOPIC_ID=1164 ;;
+              *"/3_technical-seo/"*) TOPIC_ID=1165 ;;
+              *"/technical-seo/"*) TOPIC_ID=1165 ;;
+              *"/4_ai-and-automation/"*) TOPIC_ID=1166 ;;
+              *"/ai-and-automation/"*) TOPIC_ID=1166 ;;
+              *"/5_measurement-and-optimization/"*) TOPIC_ID=1167 ;;
+              *"/measurement-and-optimization/"*) TOPIC_ID=1167 ;;
+              *"/6_future-trends/"*) TOPIC_ID=1168 ;;
+              *"/future-trends/"*) TOPIC_ID=1168 ;;
+            esac
+            
+            echo "Assigned to topic ID: $TOPIC_ID"
             
             # Handle filenames with spaces
             filename=$(basename "${file}" .md)
@@ -73,6 +94,13 @@ jobs:
               
               # Extract tags (comma-separated or YAML array)
               tags=$(echo "$front_matter" | grep -i "^tags:" | sed 's/^tags: *//I' | sed 's/[\[\]]//g' | sed 's/,/ /g')
+              
+              # Optional: Allow frontmatter to override topic
+              fm_topic=$(echo "$front_matter" | grep -i "^topic:" | sed 's/^topic: *//I')
+              if [ ! -z "$fm_topic" ]; then
+                TOPIC_ID=$fm_topic
+                echo "Topic overridden by frontmatter: $TOPIC_ID"
+              fi
               
               # Remove front matter from content
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "${file}")
