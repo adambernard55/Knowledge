@@ -44,29 +44,49 @@ jobs:
             
             echo "Processing: $file"
             
-            filename=$(basename "$file" .md)
+            # Handle filenames with spaces
+            filename=$(basename "${file}" .md)
             title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
             
-            content=$(cat "$file")
+            # Check if file exists
+            if [ ! -f "${file}" ]; then
+              echo "⚠ File not found: ${file}"
+              continue
+            fi
+            
+            content=$(cat "${file}")
             
             # Extract front matter if exists
             excerpt=""
-            if grep -q "^---$" "$file"; then
-              front_matter=$(sed -n '/^---$/,/^---$/p' "$file" | sed '1d;$d')
+            tags=""
+            if grep -q "^---$" "${file}"; then
+              front_matter=$(sed -n '/^---$/,/^---$/p' "${file}" | sed '1d;$d')
               
+              # Extract title
               fm_title=$(echo "$front_matter" | grep -i "^title:" | sed 's/^title: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
               if [ ! -z "$fm_title" ]; then
                 title="$fm_title"
               fi
               
+              # Extract excerpt
               excerpt=$(echo "$front_matter" | grep -i "^excerpt:" | sed 's/^excerpt: *//I' | sed 's/^["'\'']\(.*\)["'\'']$/\1/')
               
-              content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
+              # Extract tags (comma-separated or YAML array)
+              tags=$(echo "$front_matter" | grep -i "^tags:" | sed 's/^tags: *//I' | sed 's/[\[\]]//g' | sed 's/,/ /g')
+              
+              # Remove front matter from content
+              content=$(sed '1{/^---$/!q;};1,/^---$/d' "${file}")
             fi
             
-# Convert to relative WordPress links
-content=$(echo "$content" | sed 's/\[\[\([^]|]*\)|\([^]]*\)\]\]/[\2](..\/kb\/\1)/g')
-content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](..\/kb\/\1)/g')
+            # Strip Obsidian internal links (keep just text)
+            content=$(echo "$content" | sed 's/\[\[[^]|]*|\([^]]*\)\]\]/\1/g')
+            content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/\1/g')
+            
+            # Remove Obsidian image embeds
+            content=$(echo "$content" | sed 's/!\[\[\([^]]*\)\]\]//g')
+            
+            # Strip Dataview code blocks
+            content=$(echo "$content" | sed '/^```dataview$/,/^```$/d')
             
             # Save content to temp file and convert with pandoc
             echo "$content" > /tmp/content.md
@@ -84,36 +104,54 @@ content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](..\/kb\/\1)/g')
             echo "Content length: ${#content} chars"
             echo "HTML length: ${#html_content} chars"
             
+            # Skip if HTML is empty
             if [ -z "$html_content" ]; then
               echo "⚠ HTML content is empty, skipping"
               continue
             fi
             
+            # Add table borders with inline styles
+            html_content=$(echo "$html_content" | sed 's/<table>/<table style="border-collapse:collapse;width:100%;border:1px solid #ddd;">/g')
+            html_content=$(echo "$html_content" | sed 's/<th\([^>]*\)>/<th\1 style="border:1px solid #ddd;padding:8px;background:#f4f4f4;text-align:left;">/g')
+            html_content=$(echo "$html_content" | sed 's/<td\([^>]*\)>/<td\1 style="border:1px solid #ddd;padding:8px;text-align:left;">/g')
+            
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
+            # Build tags array if exists
+            if [ ! -z "$tags" ]; then
+              tags_array=$(echo "$tags" | jq -R 'split(" ") | map(select(length > 0))')
+            else
+              tags_array="[]"
+            fi
+            
+            # Build JSON payload with correct plural field names
             if [ ! -z "$excerpt" ]; then
               json_payload=$(jq -n \
                 --arg title "$title" \
                 --arg content "$html_content" \
                 --arg excerpt "$excerpt" \
                 --argjson topic "$TOPIC_ID" \
+                --argjson tags "$tags_array" \
                 '{
                   title: $title,
                   content: $content,
                   excerpt: $excerpt,
                   status: "publish",
-                  knowledge_topic: [$topic]
+                  knowledge_topics: [$topic],
+                  tags: $tags
                 }')
             else
               json_payload=$(jq -n \
                 --arg title "$title" \
                 --arg content "$html_content" \
                 --argjson topic "$TOPIC_ID" \
+                --argjson tags "$tags_array" \
                 '{
                   title: $title,
                   content: $content,
                   status: "publish",
-                  knowledge_topic: [$topic]
+                  knowledge_topics: [$topic],
+                  tags: $tags
                 }')
             fi
             
@@ -151,6 +189,7 @@ content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](..\/kb\/\1)/g')
                 echo "✓ Embeddings generated and stored in Pinecone"
               else
                 echo "⚠ Embedding generation failed (HTTP $embed_http_code)"
+                echo "$embed_response"
               fi
             else
               echo "✗ Failed to sync: $title (HTTP $http_code)"
