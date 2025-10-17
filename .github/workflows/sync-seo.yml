@@ -145,12 +145,45 @@ jobs:
             
             auth_header=$(echo -n "$WP_USERNAME:$WP_APP_PASSWORD" | base64)
             
-            # Build tags array if exists
+            # Process tags: Get or create tag IDs
+            tag_ids="[]"
             if [ ! -z "$tags" ]; then
-              tags_array=$(echo "$tags" | jq -R 'split(" ") | map(select(length > 0))')
-            else
-              tags_array="[]"
+              echo "Processing tags: $tags"
+              tag_ids_array=()
+              
+              for tag_name in $tags; do
+                # Clean tag name
+                tag_slug=$(echo "$tag_name" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g')
+                
+                # Check if tag exists
+                existing_tag=$(curl -s "$WP_URL/wp-json/wp/v2/knowledge_tag?slug=$tag_slug")
+                tag_id=$(echo "$existing_tag" | jq -r '.[0].id // empty')
+                
+                if [ -z "$tag_id" ] || [ "$tag_id" = "null" ]; then
+                  # Tag doesn't exist, create it
+                  echo "Creating new tag: $tag_name"
+                  new_tag=$(curl -s -X POST \
+                    -H "Authorization: Basic $auth_header" \
+                    -H "Content-Type: application/json" \
+                    -d "{\"name\":\"$tag_name\",\"slug\":\"$tag_slug\"}" \
+                    "$WP_URL/wp-json/wp/v2/knowledge_tag")
+                  
+                  tag_id=$(echo "$new_tag" | jq -r '.id // empty')
+                fi
+                
+                if [ ! -z "$tag_id" ] && [ "$tag_id" != "null" ]; then
+                  echo "Tag '$tag_name' ID: $tag_id"
+                  tag_ids_array+=("$tag_id")
+                fi
+              done
+              
+              # Convert to JSON array
+              if [ ${#tag_ids_array[@]} -gt 0 ]; then
+                tag_ids=$(printf '%s\n' "${tag_ids_array[@]}" | jq -s '.')
+              fi
             fi
+            
+            echo "Tag IDs to assign: $tag_ids"
             
             # Check if post already exists by slug (to update existing posts)
             slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' | sed 's/[^a-z0-9-]//g')
@@ -169,15 +202,14 @@ jobs:
               echo "Creating new post"
             fi
             
-            # Build JSON payload - assign BOTH parent (1158) and child topic
-            # FIXED: Changed knowledge_tags to knowledge_tag (singular)
+            # Build JSON payload - assign BOTH parent (1158) and child topic, plus tag IDs
             if [ ! -z "$excerpt" ]; then
               json_payload=$(jq -n \
                 --arg title "$title" \
                 --arg content "$html_content" \
                 --arg excerpt "$excerpt" \
                 --argjson topic "$TOPIC_ID" \
-                --argjson tags "$tags_array" \
+                --argjson tags "$tag_ids" \
                 '{
                   title: $title,
                   content: $content,
@@ -191,7 +223,7 @@ jobs:
                 --arg title "$title" \
                 --arg content "$html_content" \
                 --argjson topic "$TOPIC_ID" \
-                --argjson tags "$tags_array" \
+                --argjson tags "$tag_ids" \
                 '{
                   title: $title,
                   content: $content,
@@ -203,7 +235,6 @@ jobs:
             
             echo "Syncing: $title"
             echo "Topics: [1158 (SEO), $TOPIC_ID]"
-            echo "Tags: $tags"
             
             response=$(curl -s -w "\n%{http_code}" \
               -X $method \
@@ -219,6 +250,10 @@ jobs:
               echo "✓ Successfully synced: $title"
               post_id=$(echo "$body" | jq -r '.id')
               echo "Post ID: $post_id"
+              
+              # Verify tags were assigned
+              assigned_tags=$(echo "$body" | jq -r '.knowledge_tag')
+              echo "Assigned tags: $assigned_tags"
               
               # Generate embeddings
               echo "Generating embeddings..."
