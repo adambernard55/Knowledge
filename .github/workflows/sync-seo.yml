@@ -169,7 +169,8 @@ jobs:
               echo "Creating new post"
             fi
             
-            # Build JSON payload with custom knowledge_tags field
+            # Build JSON payload - assign BOTH parent (1158) and child topic
+            # FIXED: Changed knowledge_tags to knowledge_tag (singular)
             if [ ! -z "$excerpt" ]; then
               json_payload=$(jq -n \
                 --arg title "$title" \
@@ -182,8 +183,8 @@ jobs:
                   content: $content,
                   excerpt: $excerpt,
                   status: "publish",
-                  knowledge_topics: [$topic],
-                  knowledge_tags: $tags
+                  knowledge_topics: [1158, $topic],
+                  knowledge_tag: $tags
                 }')
             else
               json_payload=$(jq -n \
@@ -195,12 +196,14 @@ jobs:
                   title: $title,
                   content: $content,
                   status: "publish",
-                  knowledge_topics: [$topic],
-                  knowledge_tags: $tags
+                  knowledge_topics: [1158, $topic],
+                  knowledge_tag: $tags
                 }')
             fi
             
             echo "Syncing: $title"
+            echo "Topics: [1158 (SEO), $TOPIC_ID]"
+            echo "Tags: $tags"
             
             response=$(curl -s -w "\n%{http_code}" \
               -X $method \
