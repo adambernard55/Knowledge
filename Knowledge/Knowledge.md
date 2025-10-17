@@ -26,9 +26,9 @@ related_topics:
 The **Knowledge Base** serves as the central hub connecting cross‑domain guides and reference structures across AI, SEO, and the shared Tools ecosystems.
 
 ### Primary Contents
-### - [[AI Knowledge Base]]
+### - [[AI-Knowledge-Base]]
 ### - [[SEO]]
-### - [[Tools Knowledge Base]]
+### - [[Tools]]
 
 ```dataview 
 TABLE WITHOUT ID key AS "Table of Contents" FROM "Knowledge" GROUP BY file.folder SORT key ASC

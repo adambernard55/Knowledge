@@ -103,7 +103,7 @@ Improving UX is a holistic process that combines technical, content, and design 
 
 ## Related Resources
 - [Core Web Vitals: Measuring and Optimizing User Experience](/Knowledge/SEO/3_technical-seo/3_core-web-vitals.md)
-- [SEO Analytics Basics: Measuring What Matters](./1_seo-analytics-basics.md)
-- [Conversion Rate Optimization (CRO) for SEO](./3_conversion-rate-optimization.md)
+- [SEO Analytics Basics: Measuring What Matters](1_seo-analytics-basics.md)
+- [Conversion Rate Optimization (CRO) for SEO](3_conversion-rate-optimization.md)
 - [Search Intent and User Journeys](/Knowledge/SEO/1_research-and-strategy/2_search-intent-and-user-journeys.md)
 - [E‑E‑A-T Signals: Experience, Expertise, Authoritativeness, and Trust](/Knowledge/SEO/0_fundamentals/5_eeat-signals.md)

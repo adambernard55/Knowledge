@@ -1,20 +1,19 @@
 
+# Unlocking AI’s full potential requires operational excellence
 
 For successful AI adoption, leaders need to focus on structure rather than speed.
 
-By Dave Grow
 October 1, 2025
+
 Talk of AI is inescapable. It’s often the main topic of discussion at board and executive meetings, at corporate retreats, and in the media. A record 58% of S&P 500 companies mentioned AI in their second-quarter earnings calls, according to Goldman Sachs.
-
-
 
 But it’s difficult to walk the talk. Just 5% of generative AI pilots are driving measurable profit-and-loss impact, according to a recent MIT study. That means 95% of generative AI pilots are realizing zero return, despite significant attention and investment.
 
 Although we’re nearly three years past the watershed moment of ChatGPT’s public release, the vast majority of organizations are stalling out in AI. Something is broken. What is it?
 
 Date from Lucid’s AI readiness survey sheds some light on the tripwires that are making organizations stumble. Fortunately, solving these problems doesn’t require recruiting top AI talent worth hundreds of millions of dollars, at least for most companies. Instead, as they race to implement AI quickly and successfully, leaders need to bring greater rigor and structure to their operational processes.
+### Operations are the gap between AI’s promise and practical adoption
 
-Operations are the gap between AI’s promise and practical adoption
 I can’t fault any leader for moving as fast as possible with their implementation of AI. In many cases, the existential survival of their company—and their own employment—depends on it. The promised benefits to improve productivity, reduce costs, and enhance communication are transformational, which is why speed is paramount.
 
 But while moving quickly, leaders are skipping foundational steps required for any technology implementation to be successful. Our survey research found that more than 60% of knowledge workers believe their organization’s AI strategy is only somewhat to not at all well aligned with operational capabilities.
@@ -33,7 +32,8 @@ The challenge of integrating new technology with old processes was perfectly ill
 
 This disconnect shows that AI adoption is about more than just the technology itself. For it to truly succeed enterprise-wide, companies need to provide a unified space for teams to brainstorm, plan, document, and make decisions. The fundamentals of successful technology adoption still hold true: You need the right tools to enable collaboration and documentation for AI to truly make an impact.
 
-Collaboration and change management are hidden blockers to AI implementation
+### Collaboration and change management are hidden blockers to AI implementation
+
 A company’s approach to AI is perceived very differently depending on an employee’s role. While 61% of C-suite executives believe their company’s strategy is well-considered, that number drops to 49% for managers and just 36% for entry-level employees, as our survey found.
 
 Just like with product development, building a successful AI strategy requires a structured approach. Leaders and teams need a collaborative space to come together, brainstorm, prioritize the most promising opportunities, and map out a clear path forward. As many companies have embraced hybrid or distributed work, supporting remote collaboration with digital tools becomes even more important.
@@ -44,29 +44,11 @@ Despite this efficiency, the AI-generated document was merely the foundation. We
 
 According to our survey, 23% of respondents reported that collaboration is frequently a bottleneck in complex work. Employees are willing to embrace change, but friction from poor collaboration adds risk and reduces the potential impact of AI.
 
-Operational readiness enhances your AI readiness
+### Operational readiness enhances your AI readiness
+
 Operations lacking structure are preventing many organizations from implementing AI successfully. We asked teams about their top needs to help them adapt to AI. At the top of their lists were document collaboration (cited by 37% of respondents), process documentation (34%), and visual workflows (33%).
 
 Notice that none of these requests are for more sophisticated AI. The technology is plenty capable already, and most organizations are still just scratching the surface of its full potential. Instead, what teams want most is ensuring the fundamentals around processes, documentation, and collaboration are covered.
 
 AI offers a significant opportunity for organizations to gain a competitive edge in productivity and efficiency. But moving fast isn’t a guarantee of success. The companies best positioned for successful AI adoption are those that invest in operational excellence, down to the last mile.
 
-This content was produced by Lucid Software. It was not written by MIT Technology Review’s editorial staff.
-
-
-
-Your daily newsletter about what’s up in emerging technology from MIT Technology Review.
-
-Enter your email
- Privacy Policy
-Sign up
-Our most popular stories
-It’s surprisingly easy to stumble into a relationship with an AI chatbot
-Rhiannon Williams
-In a first, Google has released data on how much energy an AI prompt uses
-Casey Crownhart
-Therapists are secretly using ChatGPT. Clients are triggered.
-Laurie Clarke
-How these two brothers became go-to experts on America’s “mystery drone” invasion
-Matthew Phelan
-MIT Technology Review © 2025

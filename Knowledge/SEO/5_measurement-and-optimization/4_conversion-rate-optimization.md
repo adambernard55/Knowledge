@@ -77,7 +77,7 @@ These are the areas where the efforts of an SEO professional have the most direc
 -   Traffic is split between the two versions, and the performance of each is measured against a specific goal (e.g., conversion rate).
 -   This allows you to prove that a specific change, and not other external factors, was responsible for an increase or decrease in performance.
 
-For a detailed guide on implementation, see our article on [A/B Testing for SEO](./5_a-b-testing-for-seo.md).
+For a detailed guide on implementation, see our article on [A/B Testing for SEO](5_a-b-testing-for-seo.md).
 
 ---
 
@@ -104,8 +104,8 @@ For a detailed guide on implementation, see our article on [A/B Testing for SEO]
 ---
 
 ## Related Resources
-- [A/B Testing for SEO](./5_a-b-testing-for-seo.md)
-- [SEO Analytics Basics: Measuring What Matters](./1_seo-analytics-basics.md)
+- [A/B Testing for SEO](5_a-b-testing-for-seo.md)
+- [SEO Analytics Basics: Measuring What Matters](1_seo-analytics-basics.md)
 - [Search Intent and User Journeys](/Knowledge/SEO/1_research-and-strategy/2_search-intent-and-user-journeys.md)
 - [Core Web Vitals: Measuring and optimizing User Experience](/Knowledge/SEO/3_technical-seo/3_core-web-vitals.md)
 - [Content Optimization Guide](/Knowledge/SEO/2_content-and-on-page/7_content-optimization-guide.md)
