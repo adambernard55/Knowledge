@@ -15,7 +15,7 @@ tags:
 
 # SEO Knowledge Base
 
-Welcome to the central repository for all topics related to Search Engine Optimization. This knowledge base is structured to guide you from foundational principles to advanced, cutting-edge strategies.
+Welcome to the central repository for all topics related to SEO and Search Engine Optimization. This knowledge base is structured to guide you from foundational principles to advanced, cutting-edge strategies.
 
 Each section below represents a core pillar of modern SEO. Use this page as your primary table of contents to navigate the different categories and find the information you need.
 
