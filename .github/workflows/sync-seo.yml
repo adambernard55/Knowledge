@@ -166,7 +166,7 @@ jobs:
                   excerpt: $excerpt,
                   status: "publish",
                   knowledge_topics: [$topic],
-                  tags: $tags
+                  knowledge_tags: $tags
                 }')
             else
               json_payload=$(jq -n \
@@ -179,7 +179,7 @@ jobs:
                   content: $content,
                   status: "publish",
                   knowledge_topics: [$topic],
-                  tags: $tags
+                  knowledge_tags: $tags
                 }')
             fi
             
