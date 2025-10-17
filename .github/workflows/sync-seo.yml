@@ -64,10 +64,9 @@ jobs:
               content=$(sed '1{/^---$/!q;};1,/^---$/d' "$file")
             fi
             
-            # Convert Obsidian wikilinks to markdown links
-            content=$(echo "$content" | sed 's/\[\[\([^]|]*\)|\([^]]*\)\]\]/[\2](\1)/g')
-            content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](\1)/g')
-            content=$(echo "$content" | sed 's/!\[\[\([^]]*\)\]\]/![](\1)/g')
+# Convert to relative WordPress links
+content=$(echo "$content" | sed 's/\[\[\([^]|]*\)|\([^]]*\)\]\]/[\2](..\/kb\/\1)/g')
+content=$(echo "$content" | sed 's/\[\[\([^]]*\)\]\]/[\1](..\/kb\/\1)/g')
             
             # Save content to temp file and convert with pandoc
             echo "$content" > /tmp/content.md
