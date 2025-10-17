@@ -1,14 +1,22 @@
 ---
 title: "Understanding Search Intent: The Key to Relevant Content"
-seo_category: "fundamentals"
-difficulty: "beginner"
-last_updated: "2025-01-15"
-kb_status: "published"
-tags: ["search-intent", "user-intent", "query-types", "content-strategy", "fundamentals"]
-related_topics: ["keyword-research", "content-optimization", "how-search-engines-work", "serp-features"]
-summary: "Details the various non-standard results (e.g., featured snippets, knowledge panels, local packs) that appear on a SERP and how to optimize for them."
+summary: Details the various non-standard results (e.g., featured snippets, knowledge panels, local packs) that appear on a SERP and how to optimize for them.
+seo_category: fundamentals
+difficulty: beginner
+last_updated: 2025-01-15
+kb_status: published
+tags:
+  - search-intent
+  - user-intent
+  - query-types
+  - content-strategy
+  - fundamentals
+related_topics:
+  - keyword-research
+  - content-optimization
+  - how-search-engines-work
+  - serp-features
 ---
-
 # Understanding Search Intent: The Foundation of Effective SEO
 
 ## Introduction

@@ -1,5 +1,6 @@
 ---
 title: "Understanding Search Intent: The Foundation of Modern SEO"
+summary: "Covers the 'why' behind a user's query and the four primary types of intent: Informational, Navigational, Commercial, and Transactional."
 seo_category: fundamentals
 difficulty: beginner
 last_updated: 2025-01-24
@@ -17,9 +18,7 @@ related_topics:
   - serp-features
   - keyword-research-basics
   - eeat-signals
-summary: "Covers the 'why' behind a user's query and the four primary types of intent: Informational, Navigational, Commercial, and Transactional."
 ---
-
 # Understanding Search Intent: The Foundation of Modern SEO
 
 ## Overview
@@ -28,8 +27,6 @@ summary: "Covers the 'why' behind a user's query and the four primary types of i
 
 Search engines have evolved beyond simple keyword matching. They now prioritize content that best fulfills the user's underlying need. This requires SEO professionals to shift their focus from "what did they type?" to "what do they want to accomplish?"
 
----
-
 ## 1. Why Search Intent is Crucial for SEO
 
 Aligning your content with search intent directly impacts key performance indicators:
@@ -37,8 +34,6 @@ Aligning your content with search intent directly impacts key performance indica
 -   **Increased Engagement:** When content matches intent, users are more likely to stay on the page, leading to higher dwell time and lower bounce rates.
 -   **Better Conversion Rates:** By providing the right information or call-to-action at the right time, you can guide users more effectively through their journey.
 -   **Building Trust:** Consistently providing relevant and helpful answers establishes your site as an authoritative source (E-E-A-T).
-
----
 
 ## 2. The Four Primary Types of Search Intent
 
@@ -50,8 +45,6 @@ Most search queries can be categorized into one of four main types.
 | **Navigational** | To go to a specific website or page. The user already knows their destination. | "YouTube login", "OpenAI homepage", "Twitter" | Homepage, brand-specific pages, login pages, contact pages. |
 | **Commercial Investigation**| To compare products, services, or brands before making a decision. Users are in a research phase. | "best running shoes 2025", "Ahrefs vs SEMrush", "iPhone 15 reviews" | Comparison articles, "best of" lists, detailed reviews, case studies. |
 | **Transactional**| To complete a specific action, such as making a purchase, signing up, or downloading something. | "buy iPhone 15", "start free trial for n8n", "SEO audit service quote" | Product pages, service pages, pricing pages, sign-up forms. |
-
----
 
 ## 3. How to Identify Search Intent
 
@@ -82,8 +75,6 @@ Certain words in a query are strong indicators of intent.
 | **Commercial** | `best`, `top`, `review`, `comparison`, `vs`, `alternative`, `affordable`, `cheap` |
 | **Transactional**| `buy`, `purchase`, `order`, `price`, `coupon`, `discount`, `deal`, `free trial`, `sign up` |
 
----
-
 ## 4. Matching Content to Intent
 
 The core of intent-based SEO is creating the right type of content for the right query. A mismatch will lead to poor performance, no matter how well-optimized the page is otherwise.
@@ -97,8 +88,6 @@ The core of intent-based SEO is creating the right type of content for the right
 
 ### The Concept of Mixed Intent
 Some keywords, like "CRM software," have mixed intent. A user could be looking for a definition (informational), a comparison of the best options (commercial), or to buy a specific one (transactional). SERPs for these queries will often show a mix of results. The best strategy is often to create a comprehensive pillar page that addresses multiple facets of the query and links out to more specific sub-pages.
-
----
 
 ## 5. Key Takeaways
 

@@ -1,14 +1,24 @@
 ---
 title: "How Search Engines Work: The Complete Technical Guide"
-seo_category: "fundamentals"
-difficulty: "beginner"
-last_updated: "2025-01-15"
-kb_status: "published"
-tags: ["search-engines", "crawling", "indexing", "ranking", "algorithms", "googlebot", "fundamentals"]
-related_topics: ["what-is-seo", "search-intent", "keyword-research", "technical-seo"]
 summary: "Explains the four core functions of a search engine: crawling, rendering, indexing, and ranking."
+seo_category: fundamentals
+difficulty: beginner
+last_updated: 2025-01-15
+kb_status: published
+tags:
+  - search-engines
+  - crawling
+  - indexing
+  - ranking
+  - algorithms
+  - googlebot
+  - fundamentals
+related_topics:
+  - what-is-seo
+  - search-intent
+  - keyword-research
+  - technical-seo
 ---
-
 # How Search Engines Work: Understanding the Technology Behind Search
 
 ## Introduction

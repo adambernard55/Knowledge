@@ -1,5 +1,6 @@
 ---
 title: What is SEO? A Comprehensive Guide
+summary: "Defines Search Engine Optimization and its core pillars: Technical, On-Page, and Off-Page SEO."
 seo_category: fundamentals
 difficulty: beginner
 last_updated: 2025-01-15
@@ -15,9 +16,7 @@ related_topics:
   - keyword-research
 aliases:
   - What is SEO?
-summary: "Defines Search Engine Optimization and its core pillars: Technical, On-Page, and Off-Page SEO."
 ---
-
 # What is SEO? Understanding Search Engine Optimization
 
 ## Introduction
