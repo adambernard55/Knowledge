@@ -27,7 +27,7 @@ The **Knowledge Base** serves as the central hub connecting cross‑domain guide
 
 ### Primary Contents
 ### - [[AI Knowledge Base]]
-### - [[SEO Knowledge Base]]
+### - [[SEO]]
 ### - [[Tools Knowledge Base]]
 
 ```dataview 

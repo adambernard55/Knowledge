@@ -1,9 +1,10 @@
 ---
 title: "Search Intent and User Journeys: Mapping Queries to Customer Needs"
-seo_category: "research-and-strategy"
-difficulty: "beginner"
-last_updated: "2025-01-22"
-kb_status: "published"
+summary: Explains how to map search queries to user intent and the different stages of the customer journey for a cohesive content strategy.
+seo_category: research-and-strategy
+difficulty: beginner
+last_updated: 2025-01-22
+kb_status: published
 tags:
   - search-intent
   - user-journey

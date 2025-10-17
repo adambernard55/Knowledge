@@ -1,9 +1,10 @@
 ---
 title: "Keyword Research Basics: Discovering Search Opportunities"
-seo_category: "research-and-strategy"
-difficulty: "beginner"
-last_updated: "2025-01-22"
-kb_status: "published"
+summary: Introduces the fundamentals of discovering, analyzing, and prioritizing keywords to align with audience search behavior.
+seo_category: research-and-strategy
+difficulty: beginner
+last_updated: 2025-01-22
+kb_status: published
 tags:
   - keyword-research
   - seo-strategy

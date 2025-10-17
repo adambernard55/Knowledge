@@ -1,5 +1,6 @@
 ---
 title: "AI-Powered Keyword Research: Intelligent Discovery and Intent Analysis"
+summary: "Explores how to leverage AI and NLP for advanced keyword discovery, intent analysis, and identifying predictive search trends."
 seo_category: "ai-seo"
 difficulty: "intermediate"
 last_updated: "2025-01-21"

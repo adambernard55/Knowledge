@@ -1,5 +1,6 @@
 ---
 title: "Topical Authority and Clustering: Building Depth and Relevance in SEO"
+summary: "Details how to build topical authority through the pillar-cluster model, reinforcing semantic depth and relevance for search engines."
 seo_category: "research-and-strategy"
 difficulty: "advanced"
 last_updated: "2025-01-22"

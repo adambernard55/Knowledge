@@ -1,5 +1,6 @@
 ---
 title: "SEO Strategy Frameworks: Building a Structured Approach to Sustainable Growth"
+summary: "Presents repeatable models (e.g., R.O.A.D., PIE) for planning, executing, and measuring SEO initiatives to ensure alignment with business goals."
 seo_category: "research-and-strategy"
 difficulty: "intermediate"
 last_updated: "2025-01-22"

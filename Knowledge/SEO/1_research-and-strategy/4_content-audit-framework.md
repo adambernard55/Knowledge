@@ -1,5 +1,6 @@
 ---
 title: "Content Audit Framework: Evaluating and Enhancing SEO Performance"
+summary: "Outlines a structured process for evaluating existing content for performance, relevance, and quality to inform optimization, refreshing, or pruning."
 seo_category: "research-and-strategy"
 difficulty: "intermediate"
 last_updated: "2025-01-22"

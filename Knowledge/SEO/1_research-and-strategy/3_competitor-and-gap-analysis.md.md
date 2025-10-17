@@ -1,5 +1,6 @@
 ---
 title: "Competitor and Gap Analysis: Finding Opportunities Through Data"
+summary: "Provides a framework for analyzing competitors' SEO performance to identify content, keyword, and backlink gaps and uncover strategic opportunities."
 seo_category: "research-and-strategy"
 difficulty: "intermediate"
 last_updated: "2025-01-22"
