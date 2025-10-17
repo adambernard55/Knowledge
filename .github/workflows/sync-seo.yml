@@ -152,7 +152,24 @@ jobs:
               tags_array="[]"
             fi
             
-            # Build JSON payload with correct plural field names
+            # Check if post already exists by slug (to update existing posts)
+            slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' | sed 's/[^a-z0-9-]//g')
+            existing_post=$(curl -s "$WP_URL/wp-json/wp/v2/knowledge?slug=$slug")
+            post_id=$(echo "$existing_post" | jq -r '.[0].id // empty')
+            
+            if [ ! -z "$post_id" ] && [ "$post_id" != "null" ]; then
+              # Update existing post with PUT
+              method="PUT"
+              endpoint="$WP_URL/wp-json/wp/v2/knowledge/$post_id"
+              echo "Updating existing post (ID: $post_id)"
+            else
+              # Create new post with POST
+              method="POST"
+              endpoint="$WP_URL/wp-json/wp/v2/knowledge"
+              echo "Creating new post"
+            fi
+            
+            # Build JSON payload with custom knowledge_tags field
             if [ ! -z "$excerpt" ]; then
               json_payload=$(jq -n \
                 --arg title "$title" \
@@ -183,14 +200,14 @@ jobs:
                 }')
             fi
             
-            echo "Creating/updating post: $title"
+            echo "Syncing: $title"
             
             response=$(curl -s -w "\n%{http_code}" \
-              -X POST \
+              -X $method \
               -H "Authorization: Basic $auth_header" \
               -H "Content-Type: application/json" \
               -d "$json_payload" \
-              "$WP_URL/wp-json/wp/v2/knowledge")
+              "$endpoint")
             
             http_code=$(echo "$response" | tail -n1)
             body=$(echo "$response" | sed '$d')
