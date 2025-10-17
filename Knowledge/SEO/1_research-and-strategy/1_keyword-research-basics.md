@@ -21,12 +21,11 @@ related_topics:
   - topical-authority-and-clustering
 ---
 
-# Keyword Research Basics: Discovering Search Opportunities
+# Keyword Research Basics
 
-## Overview
+## Discovering Search Opportunities
 
-**Keyword research** is the foundation of every SEO strategy.  
-It’s the process of discovering and analyzing the words and phrases people type into search engines to find information, products, or services related to your business.
+**Keyword research** is the foundation of every SEO strategy.  It’s the process of discovering and analyzing the words and phrases people type into search engines to find information, products, or services related to your business.
 
 Understanding the language of your audience allows you to:
 - Identify **high‑value opportunities** aligned with user intent,  
@@ -39,8 +38,7 @@ This reference explains core keyword research concepts, the tools and metrics us
 
 ## 1. What Is Keyword Research?
 
-Keyword research identifies the **queries** your target audience uses and measures their potential impact on your SEO goals.  
-It answers three fundamental questions:
+Keyword research identifies the **queries** your target audience uses and measures their potential impact on your SEO goals.  It answers three fundamental questions:
 
 | Question | Why It Matters |
 |-----------|----------------|
@@ -118,7 +116,7 @@ A balanced approach considers not just volume, but **intent, competition, and co
 ### Step 1: Identify Core Topics
 Define the main subjects your business covers.  
 *Example:* A digital marketing agency might focus on:  
-SEO, content marketing, PPC, analytics, and branding.
+- SEO, content marketing, PPC, analytics, and branding.
 
 ### Step 2: Generate Keyword Ideas
 Use tools to expand topic ideas:
@@ -216,6 +214,7 @@ When combined, these tools yield a 360° view of what your audience is searching
 ## 10. Measuring Keyword Performance
 
 ### Monitoring Metrics
+
 Track post‑publication performance:
 
 | Metric | Purpose |
