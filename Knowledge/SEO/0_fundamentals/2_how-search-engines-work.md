@@ -166,6 +166,15 @@ Modern search engines use hundreds of ranking factors, weighted by machine learn
 - **Language**: Preferred language settings
 - **Time**: Time-sensitive results
 
+### 4.4 Generative Ranking and the "Query Fan-Out" Process
+
+In the era of AI Overviews, the process of serving results for complex queries has evolved. Google uses a mechanism called **"query fan-out"**:
+
+1.  **Deconstruction:** The AI model receives a complex, conversational query. It autonomously breaks this down into multiple, smaller, more specific sub-queries.
+2.  **Internal Search:** The model runs these dozens of sub-queries against Google's traditional search index in the background.
+3.  **Synthesis:** It analyzes the top-ranking content for these sub-queries, gathering and synthesizing the information to construct its final, cohesive AI-generated answer.
+
+This confirms that even in AI-driven search, the system still relies on its core index and the ranking signals of traditional SEO to find trustworthy information.
 ## How Search Queries Are Processed
 
 When you enter a search query, here's what happens in milliseconds:

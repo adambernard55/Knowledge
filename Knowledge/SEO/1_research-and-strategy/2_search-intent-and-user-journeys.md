@@ -23,11 +23,20 @@ related_topics:
 
 ## Overview
 
-Understanding **search intent** and how it aligns with the **user journey** is central to effective SEO.  
-Search intent is *why* someone performs a search — the goal or need behind the query — while the user journey represents *how* they progress from awareness to decision.  
+Understanding **search intent** and how it aligns with the **user journey** is central to effective SEO.  Search intent is *why* someone performs a search — the goal or need behind the query — while the user journey represents *how* they progress from awareness to decision.  
 
-Modern SEO success depends not just on ranking for keywords, but on **addressing the intent behind them with the right content at the right stage**.  
-By mapping keywords and topics to the full user journey, marketers can create cohesive, intent-driven experiences that attract, educate, and convert users naturally.
+Modern SEO success depends not just on ranking for keywords, but on **addressing the intent behind them with the right content at the right stage**.  By mapping keywords and topics to the full user journey, marketers can create cohesive, intent-driven experiences that attract, educate, and convert users naturally.
+
+## The Rise of Complex, Conversational Intent
+
+With the adoption of AI chatbots and AI Overviews, users are shifting from short keyword queries to longer, more complex, conversational questions. Google's guidance for creators is to focus on anticipating and satisfying these deeper informational journeys.
+
+Key opportunity areas include:
+-   **"Advice" Queries:** Users are looking for nuanced recommendations and guidance.
+-   **"How-To" Queries:** Detailed, step-by-step instructions for complex processes.
+-   **Comparative or Analytical Queries:** Questions that require synthesizing information from multiple sources.
+
+Your content strategy should prioritize creating the single best, most comprehensive answer to these complex needs, as this is precisely the type of content that generative AI is designed to find and use as a source.
 
 ## 1. Search Intent: The Foundation of Content Relevance
 

@@ -22,16 +22,12 @@ Artificial Intelligence (AI) is no longer a future trend in Search Engine Optimi
 
 Understanding this dual role is essential for navigating the modern search landscape. This document provides a high-level overview of how AI is fundamentally reshaping both search engines and the practice of SEO.
 
----
-
 ## 1. The Dual Role of AI in SEO
 
 | Role | Who is Using AI? | Primary Goal |
 |---|---|---|
 | **AI in Search Engines** | **Google, Bing, etc.** | To better understand user intent, evaluate content quality, and provide direct, synthesized answers. |
 | **AI for SEO Professionals**| **Marketers, SEOs, Content Creators**| To accelerate research, scale content creation, automate tasks, and gain deeper analytical insights. |
-
----
 
 ## 2. Part 1: How Search Engines Use AI
 
@@ -52,8 +48,6 @@ The most significant recent shift is the integration of generative AI directly i
 -   **Key Feature:** Google's AI Overviews and other generative engines (like Perplexity) use AI to synthesize information from multiple sources and provide a direct answer to the user's query.
 -   **Impact on SEO:** This introduces **Generative Engine Optimization (GEO)**, where the goal is not just to rank, but to be a trusted source that is cited within these AI-generated answers.
 
----
-
 ## 3. Part 2: How SEO Professionals Use AI
 
 AI provides SEOs with a powerful suite of tools to enhance efficiency and strategic capabilities across all pillars of the discipline.
@@ -65,15 +59,11 @@ AI provides SEOs with a powerful suite of tools to enhance efficiency and strate
 | **Technical SEO**| AI can automate complex technical tasks and analysis. | - **Generating Schema Markup:** Create valid JSON-LD for rich results.<br>- **Automating Redirects:** Write `.htaccess` rules for site migrations.<br>- **Analyzing Log Files:** Identify crawl anomalies or security threats. |
 | **Automation & Workflows**| AI agents can perform multi-step, repetitive tasks. | - **Automated Reporting:** An AI agent can pull data from multiple sources and compile a weekly performance report.<br>- **On-Page Audits:** Run automated checks for broken links, missing meta tags, and other on-page issues. |
 
----
-
 ## 4. The Strategic Shift: Agentic SEO and Optimizing for Machines
 
 As AI systems become more autonomous, SEO is evolving to optimize for a new audience: AI agents.
 -   **The Agentic Engine:** AI agents (like those powering Perplexity or advanced chatbots) are becoming a "third traffic engine" alongside traditional search and social media. These agents crawl the web to gather information for their own purposes.
 -   **Agentic SEO:** This is the practice of structuring content to be easily discoverable, parsable, and citable by these agents. It involves creating modular, machine-readable content enriched with structured data. This goes hand-in-hand with GEO.
-
----
 
 ## 5. The Indispensable Human Role in the Age of AI
 
@@ -86,7 +76,11 @@ While AI automates many tasks, it elevates the importance of human strategy, cre
 | **Creativity and Originality** | Adding unique insights, firsthand experience, and a distinct brand voice that AI cannot replicate. |
 | **Critical Thinking and Validation**| Fact-checking AI outputs, interpreting complex data, and making final strategic decisions. |
 
----
+## The Hybrid Reality: Classic Search Remains King
+
+While generative AI is transforming the search landscape, it is essential to remember that **traditional search is still the dominant way users find information.** As highlighted by industry analysis, Google's classic search still accounts for the vast majority of all search volume.
+
+Therefore, the fundamentals of technical SEO, quality content aligned with user intent, and building authority remain the foundation of any successful SEO strategy. The goal is not to abandon these principles but to **augment them with an understanding of how generative AI works.** Long-term success will come from mastering both paradigms.
 
 ## 6. Key Takeaways
 
