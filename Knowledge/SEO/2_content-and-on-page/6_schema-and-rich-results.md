@@ -32,8 +32,6 @@ Structured data doesn’t guarantee a ranking boost, but it does improve **click
 
 This guide outlines schema fundamentals, benefits, types, and implementation best practices that enhance search visibility and reinforce E‑E‑A‑T signals.
 
----
-
 ## 1. What Is Schema Markup?
 
 Schema markup is a **semantic vocabulary** defined by [Schema.org](https://schema.org/) — an open community collaboration supported by search engines like Google, Bing, and Yahoo.  
@@ -72,8 +70,6 @@ By embedding descriptive tags into a page’s HTML (often via JSON‑LD), you in
 
 This markup helps search engines accurately identify this page as an _article_ about schema optimization, written by a specific author and published by a particular brand.
 
----
-
 ## 2. Why Structured Data Matters for SEO
 
 |Benefit|Description|
@@ -86,8 +82,6 @@ This markup helps search engines accurately identify this page as an _article_�
 |**Optimized for Voice and AI Search**|Structured content helps virtual assistants and generative engines deliver precise answers.|
 
 Schema ensures search engines “see” what humans see — titles, authors, product specs, prices, reviews — but with structured detail.
-
----
 
 ## 3. How Rich Results Are Generated
 
@@ -106,8 +100,6 @@ Schema ensures search engines “see” what humans see — titles, authors, pro
 
 Google determines eligibility for each feature based on the **type and quality of structured data** present on your page.
 
----
-
 ## 4. Key Schema Types for On‑Page SEO
 
 |Schema Type|Use Case|Example Page|
@@ -124,8 +116,6 @@ Google determines eligibility for each feature based on the **type and quality 
 |**Dataset / Course**|For research data or education programs.|Universities, online learning portals.|
 
 Use multiple schemas if relevant, as long as they accurately describe the content.
-
----
 
 ## 5. Implementation Methods
 
@@ -156,8 +146,6 @@ Add code blocks inside the `<head>` or `<body>` of your HTML page.
 These embed schema properties directly into HTML tags, but are harder to maintain.  
 Use only when JSON‑LD integration isn’t possible (older CMS templates).
 
----
-
 ## 6. Validation and Testing
 
 Always verify schema accuracy to avoid errors or ineligibility for rich results.
@@ -170,8 +158,6 @@ Always verify schema accuracy to avoid errors or ineligibility for rich results.
 |**Screaming Frog (Structured Data Extraction)**|Audits deployment across multiple pages.|
 
 **Tip:** Only mark up content visible to users. Hidden or misleading markup violates Google’s spam policies and may remove eligibility.
-
----
 
 ## 7. Schema Integration with On‑Page SEO Elements
 
@@ -186,8 +172,6 @@ Schema should complement—not duplicate—your existing metadata and hierarchy.
 |**Media Content**|VideoObject and ImageObject schemas reinforce topical relevance.|Video preview thumbnails in results.|
 
 Schema and traditional on‑page SEO operate symbiotically: one provides _semantic clarity_, the other _expressive quality._
-
----
 
 ## 8. Rich Result Eligibility and Best Practices
 
@@ -210,8 +194,6 @@ Schema and traditional on‑page SEO operate symbiotically: one provides _seman
 
 Structured data should evolve as your content ecosystem grows—revisit fields as formats expand.
 
----
-
 ## 9. Advanced Techniques
 
 |Technique|Description|Application|
@@ -223,8 +205,6 @@ Structured data should evolve as your content ecosystem grows—revisit fields a
 |**Product and Review Snippet Combination**|Combine `Product` and `Review` objects for item pages.|e‑commerce listings.|
 
 Advanced schemas feed into AI‑driven Search Generative Experiences (SGE) and Knowledge Graph relationships.
-
----
 
 ## 10. Troubleshooting Common Errors
 
@@ -238,8 +218,6 @@ Advanced schemas feed into AI‑driven Search Generative Experiences (SGE) and K
 
 Keep validation logs and update when Search Console flags issues in the Enhancements section.
 
----
-
 ## 11. Measuring the Impact of Schema Implementation
 
 |Metric|Indicator|Measurement Tool|
@@ -251,8 +229,6 @@ Keep validation logs and update when Search Console flags issues in the Enhancem
 |**Engagement & Dwell Time**|User interaction quality after discovery.|GA4 / Hotjar analysis.|
 
 Track improvements over **30–90 days** post‑implementation to benchmark CTR and appearance changes.
-
----
 
 ## 12. Key Takeaways
 
