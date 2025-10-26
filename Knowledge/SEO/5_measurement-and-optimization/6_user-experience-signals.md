@@ -44,7 +44,7 @@ These are the technical, measurable factors that Google has confirmed it uses to
 | Signal | Description | Where to Learn More |
 |---|---|---|
 | **Core Web Vitals (CWV)** | A set of metrics that measure real-world loading performance (LCP), interactivity (INP), and visual stability (CLS). | See our guide on [Core Web Vitals](./3_core-web-vitals.md). |
-| **Mobile-Friendliness**| The page must be easy to use on a mobile device, with readable text and tappable targets. | See our guide on [Mobile and Responsive SEO](/Knowledge/SEO/3_technical-seo/5_mobile-and-responsive-seo.md). |
+| **Mobile-Friendliness**| The page must be easy to use on a mobile device, with readable text and tappable targets. | See our guide on [Mobile and Responsive SEO](5_mobile-and-responsive-seo.md). |
 | **HTTPS**| The page must be served over a secure HTTPS connection to protect user data. | A standard technical SEO requirement. |
 | **Safe Browsing**| The page must not contain malware, phishing, or other deceptive content. | Monitored in Google Search Console's "Security issues" report. |
 | **No Intrusive Interstitials**| The content on the page should be easily accessible to the user, without being obscured by intrusive pop-ups. | Applies primarily to the mobile experience. |
@@ -102,8 +102,8 @@ Improving UX is a holistic process that combines technical, content, and design 
 ---
 
 ## Related Resources
-- [Core Web Vitals: Measuring and Optimizing User Experience](/Knowledge/SEO/3_technical-seo/3_core-web-vitals.md)
+- [Core Web Vitals: Measuring and Optimizing User Experience](3_core-web-vitals.md)
 - [SEO Analytics Basics: Measuring What Matters](1_seo-analytics-basics.md)
 - [Conversion Rate Optimization (CRO) for SEO](3_conversion-rate-optimization.md)
-- [Search Intent and User Journeys](/Knowledge/SEO/1_research-and-strategy/2_search-intent-and-user-journeys.md)
-- [E‑E‑A-T Signals: Experience, Expertise, Authoritativeness, and Trust](/Knowledge/SEO/0_fundamentals/5_eeat-signals.md)
+- [Search Intent and User Journeys](2_search-intent-and-user-journeys.md)
+- [E‑E‑A-T Signals: Experience, Expertise, Authoritativeness, and Trust](5_eeat-signals.md)

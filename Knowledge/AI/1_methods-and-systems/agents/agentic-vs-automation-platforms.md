@@ -117,7 +117,7 @@ This approach leverages the strengths of both deterministic automation for relia
 ---
 
 ## Related Resources
--   [What Are AI Agents? A Foundational Guide](/Knowledge/AI/1_methods-and-systems/agents/what-are-ai-agents.md)
--   [OpenAI Unveils AgentKit: A Reference Overview](/Knowledge/AI/1_methods-and-systems/agents/openai-unveils-agentkit.md)
--   [AI Agents Running Workflows: From Automation to Autonomous Orchestration](/Knowledge/AI/1_methods-and-systems/agents/ai-agents-running-workflows.md)
--   [Building Agents with OpenAI's GPTs](/Knowledge/AI/1_methods-and-systems/agents/building-agents-with-openai-gpts.md)
+-   [What Are AI Agents? A Foundational Guide](what-are-ai-agents.md)
+-   [OpenAI Unveils AgentKit: A Reference Overview](openai-unveils-agentkit.md)
+-   [AI Agents Running Workflows: From Automation to Autonomous Orchestration](ai-agents-running-workflows.md)
+-   [Building Agents with OpenAI's GPTs](building-agents-with-openai-gpts.md)

@@ -135,7 +135,7 @@ Focus on improving leading indicators, as they are the drivers of your lagging i
 
 ## Related Resources
 - [A/B Testing for SEO](ab-testing-for-seo.md)
-- [SEO Strategy Frameworks](Knowledge/SEO/1_research-and-strategy/6_seo-strategy-frameworks.md)
-- [Keyword Research Basics](Knowledge/SEO/1_research-and-strategy/1_keyword-research-basics.md)
-- [How Search Engines Work](Knowledge/SEO/0_fundamentals/2_how-search-engines-work.md)
+- [SEO Strategy Frameworks](6_seo-strategy-frameworks.md)
+- [Keyword Research Basics](1_keyword-research-basics.md)
+- [How Search Engines Work](2_how-search-engines-work.md)
 - [Rank Tracking and Reporting](rank-tracking-and-reporting.md)

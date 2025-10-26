@@ -72,7 +72,7 @@ Mobile users are often on slower network connections, making performance a top p
 -   **Leverage Browser Caching:** Configure caching to store static assets on the user's device, so they don't have to be re-downloaded on subsequent visits.
 -   **Prioritize Above-the-Fold Content:** Use techniques like inlining critical CSS to render the visible portion of the page as quickly as possible.
 
-For a detailed breakdown, see our guide on [Page Speed Optimization](Knowledge/SEO/3_technical-seo/4_page-speed-optimization.md).
+For a detailed breakdown, see our guide on [Page Speed Optimization](4_page-speed-optimization.md).
 
 ---
 
@@ -104,5 +104,5 @@ Regularly check your site's mobile performance and usability.
 - [Core Web Vitals: Measuring and Optimizing User Experience](3_core-web-vitals.md)
 - [Page Speed Optimization: A Comprehensive Guide](4_page-speed-optimization.md)
 - [JavaScript SEO: Ensuring Your Content is Renderable and Indexable](2_javascript-and-rendering.md)
-- [How Search Engines Work](Knowledge/SEO/0_fundamentals/2_how-search-engines-work.md)
+- [How Search Engines Work](2_how-search-engines-work.md)
 - [Crawlability and Indexation: Ensuring Search Engine Access](1_crawlability-and-indexation.md)

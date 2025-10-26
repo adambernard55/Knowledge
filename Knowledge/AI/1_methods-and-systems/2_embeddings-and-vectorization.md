@@ -132,5 +132,5 @@ The quality of your AI system's output is highly dependent on the quality of you
 ## Related Resources
 -   [LLM and System Architectures: From Transformers to Agentic AI](/Knowledge/AI/1_methods-and-systems/architectures-and-llms.md)
 -   [Training and finetuning](3_training-and-finetuning.md)
--   [Agentic AI Systems: Architectures, Frameworks, and Memory](/Knowledge/AI/1_methods-and-systems/agentic-architectures-and-frameworks.md)
+-   [Agentic AI Systems: Architectures, Frameworks, and Memory](agentic-architectures-and-frameworks.md)
 -   [RAG Architecture (To be created)](/Knowledge/AI/1_methods-and-systems/rag-architecture.md)

@@ -127,7 +127,7 @@ These methods focus on aligning a model's behavior with human preferences and in
 ---
 
 ## Related Resources
--   [LLM and System Architectures: From Transformers to Agentic AI](/Knowledge/AI/1_methods-and-systems/1_architectures-and-llms.md)
+-   [LLM and System Architectures: From Transformers to Agentic AI](1_architectures-and-llms.md)
 -   [Embeddings and Vectorization: Translating Meaning into Math](/Knowledge/AI/1_methods-and-systems/embeddings-and-vectorization.md)
--   [The AI Stack](/Knowledge/AI/0_fundamentals/the-ai-stack.md)
+-   [The AI Stack](the-ai-stack.md)
 -   [RAG Architecture (To be created)](/Knowledge/AI/1_methods-and-systems/rag-architecture.md)

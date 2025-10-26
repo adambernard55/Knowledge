@@ -109,5 +109,5 @@ The rendering strategy you choose for your website has a direct and significant 
 - [Crawlability and Indexation: Ensuring Search Engine Access](1_crawlability-and-indexation.md)
 - [Core Web Vitals: Measuring and Optimizing User Experience](3_core-web-vitals.md)
 - [Page Speed Optimization: A Comprehensive Guide](4_page-speed-optimization.md)
-- [How Search Engines Work](Knowledge/SEO/0_fundamentals/2_how-search-engines-work.md)
+- [How Search Engines Work](2_how-search-engines-work.md)
 - [Semantic SEO: Optimizing for Meaning, Entities, and Context](6_semantic-seo.md)

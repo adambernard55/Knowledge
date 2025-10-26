@@ -48,7 +48,7 @@ Most SEO forecasts are built on a "bottom-up" model that projects traffic and co
 
 | Variable | Description | Where to Get the Data |
 |---|---|---|
-| **Target Keywords**| The list of keywords you plan to rank for. | [Keyword Research Basics](Knowledge/SEO/1_research-and-strategy/1_keyword-research-basics.md) |
+| **Target Keywords**| The list of keywords you plan to rank for. | [Keyword Research Basics](1_keyword-research-basics.md) |
 | **Monthly Search Volume (MSV)** | The average number of times a keyword is searched per month. | Ahrefs, SEMrush, Google Keyword Planner |
 | **Target Click-Through Rate (CTR)**| The percentage of users expected to click your result at a target ranking position. This is not a single number; it's based on a "CTR curve." | Industry CTR studies (e.g., by Backlinko or FirstPageSage), or your own data from Google Search Console. |
 | **Conversion Rate (CR)**| The percentage of organic visitors who complete a goal. | Google Analytics 4 |
@@ -108,6 +108,6 @@ A single number is rarely accurate. Sophisticated forecasts use scenarios and ac
 ## Related Resources
 - [SEO Analytics Basics: Measuring What Matters](1_seo-analytics-basics.md)
 - [Conversion Rate Optimization (CRO) for SEO](3_conversion-rate-optimization.md)
-- [SEO Strategy Frameworks](/Knowledge/SEO/1_research-and-strategy/6_seo-strategy-frameworks.md)
+- [SEO Strategy Frameworks](6_seo-strategy-frameworks.md)
 - [Rank Tracking and Reporting: Measuring and Communicating SEO Performance](2_rank-tracking-and-reporting.md)
-- [Keyword Research Basics](/Knowledge/SEO/1_research-and-strategy/1_keyword-research-basics.md)
+- [Keyword Research Basics](1_keyword-research-basics.md)

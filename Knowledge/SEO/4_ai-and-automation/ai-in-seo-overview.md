@@ -96,5 +96,5 @@ Therefore, the fundamentals of technical SEO, quality content aligned with user 
 - [Agentic SEO: Optimizing for AI Agents and Dynamic Systems](2_agentic-seo.md)
 - [Generative Engine Optimization (GEO)](3_from-seo-to-geo.md)
 - [How Search Engines Work](Knowledge/SEO/0_fundamentals/how-search-engines-work.md)
-- [Semantic SEO: Optimizing for Meaning, Entities, and Context](Knowledge/SEO/3_technical-seo/6_semantic-seo.md)
-- [E‑E‑A‑T Signals: Experience, Expertise, Authoritativeness, and Trust](Knowledge/SEO/0_fundamentals/5_eeat-signals.md)
+- [Semantic SEO: Optimizing for Meaning, Entities, and Context](6_semantic-seo.md)
+- [E‑E‑A‑T Signals: Experience, Expertise, Authoritativeness, and Trust](5_eeat-signals.md)

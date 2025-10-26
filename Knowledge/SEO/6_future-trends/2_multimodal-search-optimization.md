@@ -108,8 +108,8 @@ Structured data is the technical backbone of multimodal optimization. It allows 
 ---
 
 ## Related Resources
-- [Future Trends in SEO: An Overview](./1_future-trends-in-seo.md)
-- [Semantic SEO: Optimizing for Meaning, Entities, and Context](/Knowledge/SEO/3_technical-seo/6_semantic-seo.md)
-- [Schema and Rich Results: Enhancing Visibility with Structured Data](/Knowledge/SEO/2_content-and-on-page/6_schema-and-rich-results.md)
-- [E‑E‑A-T Signals: Experience, Expertise, Authoritativeness, and Trust](/Knowledge/SEO/0_fundamentals/5_eeat-signals.md)
-- [Content Optimization Guide](/Knowledge/SEO/2_content-and-on-page/7_content-optimization-guide.md)
+- [Future Trends in SEO: An Overview](1_future-trends-in-seo.md)
+- [Semantic SEO: Optimizing for Meaning, Entities, and Context](6_semantic-seo.md)
+- [Schema and Rich Results: Enhancing Visibility with Structured Data](6_schema-and-rich-results.md)
+- [E‑E‑A-T Signals: Experience, Expertise, Authoritativeness, and Trust](5_eeat-signals.md)
+- [Content Optimization Guide](7_content-optimization-guide.md)

@@ -25,5 +25,5 @@ The documents herein bridge the gap between traditional SEO practices and the fu
 - **[[1_ai-in-seo-overview|AI in SEO: An Overview]]**: Start here for a foundational understanding of AI's dual role in the search ecosystem.
 
 ### Sub-Categories
-- **[[1_using-ai-for-seo/index|Using AI for SEO]]**: A collection of guides on the practical application of AI tools and platforms for SEO tasks.
-- **[[2_optimizing-for-ai/index|Optimizing for AI]]**: A collection of strategic guides on how to adapt your SEO for an AI-first world.
+- **[[Knowledge/SEO/4_ai-and-automation/1_using-ai-for-seo/index|Using AI for SEO]]**: A collection of guides on the practical application of AI tools and platforms for SEO tasks.
+- **[[Knowledge/SEO/4_ai-and-automation/2_optimizing-for-ai/index|Optimizing for AI]]**: A collection of strategic guides on how to adapt your SEO for an AI-first world.

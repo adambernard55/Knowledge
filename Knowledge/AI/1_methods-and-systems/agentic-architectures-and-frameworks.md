@@ -117,7 +117,7 @@ Developing agentic systems is a natural extension of existing ML skills.
 ---
 
 ## Related Resources
--   [What Are AI Agents? A Foundational Guide](/Knowledge/AI/1_methods-and-systems/agents/what-are-ai-agents.md)
--   [AI Agents Running Workflows: From Automation to Autonomous Orchestration](/Knowledge/AI/1_methods-and-systems/agents/ai-agents-running-workflows.md)
--   [Framework for Building an AI Desktop Automation Agent](/Knowledge/AI/1_methods-and-systems/agents/how-to-build-an-ai-desktop-automation-agent.md)
--   [Advanced Prompt Engineering for AI and Marketing](/Knowledge/AI/1_methods-and-systems/advanced-prompt-engineering.md)
+-   [What Are AI Agents? A Foundational Guide](what-are-ai-agents.md)
+-   [AI Agents Running Workflows: From Automation to Autonomous Orchestration](ai-agents-running-workflows.md)
+-   [Framework for Building an AI Desktop Automation Agent](how-to-build-an-ai-desktop-automation-agent.md)
+-   [Advanced Prompt Engineering for AI and Marketing](advanced-prompt-engineering.md)

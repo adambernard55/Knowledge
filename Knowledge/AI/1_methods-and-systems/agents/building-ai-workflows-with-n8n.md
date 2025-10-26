@@ -122,7 +122,7 @@ Beyond simple calendar agents, n8n's AI capabilities can be used for:
 ---
 
 ## Related Resources
--   [What Are AI Agents? A Foundational Guide](/Knowledge/AI/1_methods-and-systems/agents/what-are-ai-agents.md)
--   [Agentic vs. Automation Platforms: A Comparison](/Knowledge/AI/1_methods-and-systems/agents/agentic-vs-automation-platforms.md)
--   [Framework for Building an AI Desktop Automation Agent](/Knowledge/AI/1_methods-and-systems/agents/how-to-build-an-ai-desktop-automation-agent.md)
+-   [What Are AI Agents? A Foundational Guide](what-are-ai-agents.md)
+-   [Agentic vs. Automation Platforms: A Comparison](agentic-vs-automation-platforms.md)
+-   [Framework for Building an AI Desktop Automation Agent](how-to-build-an-ai-desktop-automation-agent.md)
 -   [Agentic AI Overview](/Knowledge/AI/1_methods-and-systems/agentic-ai-overview.md)

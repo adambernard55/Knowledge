@@ -112,7 +112,7 @@ The field of Agentic RL is rapidly evolving but faces several significant hurdle
 ---
 
 ## Related Resources
--   [What Are AI Agents? A Foundational Guide](/Knowledge/AI/1_methods-and-systems/agents/what-are-ai-agents.md)
+-   [What Are AI Agents? A Foundational Guide](what-are-ai-agents.md)
 -   [Agentic AI Overview](/Knowledge/AI/1_methods-and-systems/agentic-ai-overview.md)
 -   [Training and finetuning](3_training-and-finetuning.md)
 -   [Architectures and LLMs](1_architectures-and-llms.md)

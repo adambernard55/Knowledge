@@ -146,5 +146,5 @@ External scripts for analytics, ads, or social media widgets can severely impact
 - [Core Web Vitals: Measuring and Optimizing User Experience](3_core-web-vitals.md)
 - [Mobile and Responsive SEO](Knowledge/SEO/3_technical-seo/mobile-and-responsive-seo.md)
 - [JavaScript SEO: Ensuring Your Content is Renderable and Indexable](Knowledge/SEO/3_technical-seo/javascript-and-rendering.md)
-- [Crawlability and Indexation: Ensuring Search Engine Access](Knowledge/SEO/3_technical-seo/1_crawlability-and-indexation.md)
-- [E‑E‑A‑T Signals: Experience, Expertise, Authoritativeness, and Trust](Knowledge/SEO/0_fundamentals/5_eeat-signals.md)
+- [Crawlability and Indexation: Ensuring Search Engine Access](1_crawlability-and-indexation.md)
+- [E‑E‑A‑T Signals: Experience, Expertise, Authoritativeness, and Trust](5_eeat-signals.md)
