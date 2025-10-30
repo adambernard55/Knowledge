@@ -95,9 +95,15 @@ Data is useless without a clear connection to business goals. Use this framework
 
 This hierarchy ensures that you are measuring what truly matters to the business.
 
----
+## 5. Advanced Cross-Channel Performance Metrics
 
-## 5. Leading vs. Lagging Indicators
+To create a unified view of performance across different marketing channels like SEO, PPC, and Display, it can be useful to adopt shared metrics.
+
+| Metric | What it Measures | Application |
+|---|---|---|
+| **CPTI (Clicks Per Thousand Impressions)** | The number of clicks generated for every 1,000 impressions. It is a measure of engagement efficiency. | This metric can be applied to both a display ad campaign and a group of organic search results (using data from GSC). It allows you to directly compare the click-generating effectiveness of content and creative across paid and organic channels. |
+| **Reverse CPM** | A model that calculates the point at which a piece of content has "paid for itself" by achieving a certain traffic or engagement threshold. | This helps to conceptualize the ROI of content marketing by framing its performance in a way that is familiar to paid media teams. It answers the question: "When did this asset become profitable?" |
+## 6. Leading vs. Lagging Indicators
 
 Understanding the difference between these two types of metrics is key to proactive SEO management.
 
@@ -110,7 +116,7 @@ Focus on improving leading indicators, as they are the drivers of your lagging i
 
 ---
 
-## 6. A Basic SEO Reporting Workflow
+## 7. A Basic SEO Reporting Workflow
 
 1.  **Setup and Configuration:** Ensure GSC, GA4, and any third-party tools are correctly installed and tracking goals.
 2.  **Establish a Baseline:** Before starting a campaign, document your current performance across key metrics.
@@ -123,7 +129,7 @@ Focus on improving leading indicators, as they are the drivers of your lagging i
 
 ---
 
-## 7. Key Takeaways
+## 8. Key Takeaways
 
 1.  **SEO analytics is the foundation of a data-driven strategy.** It allows you to measure, prove, and improve the impact of your SEO efforts.
 2.  **Focus on the right metrics.** Go beyond vanity metrics like traffic and connect your data to business outcomes like conversions and revenue.

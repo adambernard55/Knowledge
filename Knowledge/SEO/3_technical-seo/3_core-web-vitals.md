@@ -89,8 +89,18 @@ Core Web Vitals are a confirmed, but often subtle, ranking factor.
 -   **Indirect SEO Benefits:** The primary benefit of optimizing CWV is improved user experience. This leads to lower bounce rates, higher engagement, and better conversion rates—all of which are positive signals for search engines.
 
 ---
+## 4. Core Web Vitals in a Cross-Channel Context (SEO & PPC)
 
-## 4. A Practical Workflow for Optimization
+Core Web Vitals are not just an SEO concern; they have a site-wide impact that affects other channels, particularly PPC.
+
+### The Impact of PPC Landing Pages on SEO
+Even if a landing page is created exclusively for PPC campaigns and is set to `noindex`, it can still negatively impact your site's overall CWV assessment. As explained by technical SEO experts like Jono Alderson, Google uses data from high-traffic pages (like PPC landing pages) to form a **"default assumption"** for low-traffic or new pages on your site. If your PPC pages are slow, Google may assume other pages on your site are also slow, potentially harming their organic performance.
+
+### Performance Standards for PPC
+Ad clicks often have slightly higher latency than organic clicks due to the ad network's tracking and redirection processes. However, page speed is just as critical for PPC success, as it directly impacts **Google Ads Quality Score** and, consequently, your cost-per-click. Therefore, both SEO and PPC teams should be aligned on achieving good CWV scores for all landing pages.
+
+---
+## 5. A Practical Workflow for Optimization
 
 1.  **Measure:** Use **Google Search Console** to identify groups of URLs that need improvement. Use **PageSpeed Insights** to analyze a specific URL and get both lab and field data.
 2.  **Identify:** Use **Lighthouse** in Chrome DevTools to run audits and get specific diagnostic information about what is causing poor scores. The "Performance" panel can help you trace long tasks (for INP) or identify layout shifts (for CLS).
@@ -99,7 +109,7 @@ Core Web Vitals are a confirmed, but often subtle, ranking factor.
 
 ---
 
-## 5. Key Takeaways
+## 6. Key Takeaways
 
 1.  **Core Web Vitals measure real-world user experience.** They focus on the critical dimensions of loading (LCP), interactivity (INP), and visual stability (CLS).
 2.  **User experience is a ranking factor.** While content relevance is supreme, good CWV scores can provide a competitive advantage.

@@ -97,3 +97,21 @@ Once you have chosen a framework, the next step is to populate it with specific 
     -   **Iteration:** Use the insights to inform the next "Research" phase, creating a continuous improvement loop.
 
 By systematically applying actions from all SEO disciplines within a chosen framework, you ensure that your strategy is truly unified and leaves no stone unturned.
+
+---
+## 4. The Unified Search Framework: Integrating SEO and PPC
+
+A truly advanced strategy moves beyond optimizing SEO in isolation and embraces "mutualism" with Paid Search (PPC). A Unified Search Framework treats SEO and PPC as a single, integrated system designed to maximize total search visibility, lower acquisition costs, and accelerate market insights.
+
+### Key Principles of Mutualism
+-   **Shared Accountability:** Both teams are responsible for overall search performance, not just their channel-specific KPIs.
+-   **Data Cross-Pollination:** Insights from one channel are systematically used to inform and improve the other.
+-   **Shared Technical Standards:** Both teams work from a common set of performance standards, especially regarding landing page experience and Core Web Vitals.
+
+### The SEO-PPC Feedback Loop
+
+| Data from PPC that Informs SEO                                                                                                                                 | Data from SEO that Informs PPC                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **High-Converting Keywords:** PPC data quickly validates which keywords have high commercial intent, helping SEO prioritize content.                           | **Emerging Search Intent:** SEO keyword research uncovers new long-tail queries and user questions that PPC can immediately target.                  |
+| **Effective Messaging and Ad Copy:** A/B tested ad copy reveals messaging that resonates with users, which can be incorporated into meta descriptions and H1s. | **Content for Quality Score:** High-quality, relevant SEO content can be used as landing pages for PPC campaigns, improving Quality Score.           |
+| **Brand Keyword Threats:** Competitors bidding on your brand terms signal a need for a stronger organic brand defense strategy.                                | **Organic Volatility Buffering:** During an algorithm update, PPC can be used to maintain traffic to key pages while the SEO team works on recovery. |

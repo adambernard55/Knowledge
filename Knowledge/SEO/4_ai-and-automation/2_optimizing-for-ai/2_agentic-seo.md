@@ -30,8 +30,10 @@ The digital landscape has evolved to include a new, autonomous actor: the **AI a
 **Agentic SEO** is the practice of creating structured, dynamic, and adaptive content that is optimized not only for traditional search engines and human users but also for these intelligent AI agents. This discipline moves beyond static page optimization to embrace the concept of content as an "adaptive system."
 
 This guide defines the principles of Agentic SEO, explains its foundational concepts, and explores how dynamic content systems are becoming the new frontier of search optimization.
+### The Importance of Performance for Agentic Interaction
+AI agents are goal-oriented but can be sensitive to performance bottlenecks. A critical metric for Agentic SEO is **Interaction to Next Paint (INP)**, which measures how quickly a page responds to user (or agent) interactions like clicks or form inputs.
 
----
+An agent attempting to complete a task (e.g., scraping data or filling out a form) can fail or abandon the task if the page is unresponsive. A low INP ensures that your site is not only fast to load but also fast to interact with, making it a more reliable resource for autonomous systems.
 
 ## 1. The New Paradigm: Three Engines of Online Visibility
 
