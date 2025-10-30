@@ -12,7 +12,6 @@ tags:
   - overview
 summary: An index of guides on the technical aspects of SEO, including crawlability, rendering, site speed, and semantic comprehension.
 ---
-
 # Technical SEO
 
 This section covers the technical foundation that enables search engines to efficiently find, understand, and rank your content. These documents dive into the infrastructure of a website, from ensuring pages are crawlable and indexable to optimizing for performance, mobile-friendliness, and semantic meaning.

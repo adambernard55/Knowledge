@@ -13,7 +13,6 @@ related_topics:
   - "crawlability-and-indexation"
   - "eeat-signals"
 ---
-
 # Page Speed Optimization: A Comprehensive Guide
 
 ## Overview
@@ -21,8 +20,6 @@ related_topics:
 **Page speed** is the measure of how quickly the content on your URL loads for a user. It is a critical component of technical SEO, directly impacting user experience, conversion rates, and search engine rankings. A fast-loading website provides a better user experience, which search engines like Google reward with better visibility.
 
 This guide provides a comprehensive framework for understanding, measuring, and optimizing page speed. It covers the core pillars of performance optimization, from server response times to front-end rendering, and aligns with best practices for **Core Web Vitals**.
-
----
 
 ## 1. The Impact of Page Speed on SEO and User Experience
 
@@ -34,8 +31,6 @@ Page speed is more than just a technical metric; it has a direct and measurable 
 | **User Experience (UX)** | Slow pages lead to frustration and high bounce rates. A fast, responsive site keeps users engaged. |
 | **Conversion Rate** | Studies consistently show that faster page load times lead to higher conversion rates for e-commerce, lead generation, and other goals. |
 | **Crawl Budget** | Faster server response times allow search engine bots to crawl more pages on your site in a given time, improving indexation efficiency for large websites. |
-
----
 
 ## 2. Core Page Speed Metrics
 
@@ -50,8 +45,6 @@ While **Core Web Vitals** (LCP, INP, CLS) are the primary metrics for user exper
 | **Cumulative Layout Shift (CLS)**| The measure of unexpected visual instability on a page. | A core user-centric metric for visual stability. |
 
 For a deeper dive into LCP, INP, and CLS, see our guide on [Core Web Vitals](3_core-web-vitals.md).
-
----
 
 ## 3. Key Pillars of Page Speed Optimization
 
@@ -107,8 +100,6 @@ External scripts for analytics, ads, or social media widgets can severely impact
 -   **Load Asynchronously:** Ensure all third-party scripts are loaded with `async` or `defer`.
 -   **Host Locally if Possible:** For some scripts (like fonts), hosting them on your own server can be faster than fetching them from a third-party domain.
 
----
-
 ## 4. Tools for Auditing and Diagnosis
 
 | Tool | Type | Key Use Case |
@@ -119,8 +110,6 @@ External scripts for analytics, ads, or social media widgets can severely impact
 | **GTmetrix** | Lab | A user-friendly tool that combines Lighthouse data with its own analysis and provides a prioritized list of recommendations. |
 | **Google Search Console** | Field | The Core Web Vitals report shows you how groups of pages on your site are performing for real users over time. |
 
----
-
 ## 5. A Practical Optimization Workflow
 
 1.  **Benchmark:** Run your key pages through PageSpeed Insights to get a baseline score and identify the biggest issues.
@@ -129,8 +118,6 @@ External scripts for analytics, ads, or social media widgets can severely impact
 4.  **Test:** Use Lighthouse or WebPageTest to verify that your changes have improved your lab scores.
 5.  **Monitor:** Check your Google Search Console Core Web Vitals report over the following weeks to see if your field data improves.
 6.  **Iterate:** Page speed optimization is an ongoing process. Revisit your scores quarterly and as you add new features to your site.
-
----
 
 ## 6. Key Takeaways
 

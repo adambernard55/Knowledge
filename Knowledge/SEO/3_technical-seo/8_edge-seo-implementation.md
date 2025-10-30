@@ -12,7 +12,6 @@ related_topics:
   - "javascript-and-rendering"
   - "agentic-seo"
 ---
-
 # Edge SEO: Implementation and Use Cases
 
 ## Overview
@@ -20,8 +19,6 @@ related_topics:
 **Edge SEO** is an advanced technical SEO practice that involves implementing changes by modifying a website's code at the **Content Delivery Network (CDN)** layer, rather than on the origin server or within the CMS. By leveraging serverless functions (often called "edge workers" or "functions"), SEOs can intercept and modify the HTTP request-response cycle in real-time.
 
 This approach provides unparalleled speed, scalability, and flexibility, allowing for the rapid deployment of SEO fixes, tests, and optimizations without relying on lengthy development cycles. It is a powerful tool for large, complex, or legacy websites where direct source code access is limited or slow.
-
----
 
 ## 1. How Edge SEO Works
 
@@ -35,8 +32,6 @@ Edge SEO operates on the principle of intercepting and rewriting a page's HTML b
 
 This entire process happens in milliseconds and is invisible to the end-user.
 
----
-
 ## 2. Why Use Edge SEO? The Core Benefits
 
 | Benefit | Description |
@@ -46,8 +41,6 @@ This entire process happens in milliseconds and is invisible to the end-user.
 | **Scalability**| Changes are deployed across a global CDN network, ensuring high performance and reliability for websites with massive traffic. |
 | **Risk-Free A/B Testing** | Test the SEO impact of changes (e.g., different title tag formats) on a subset of pages or users without altering the live site's code. |
 | **Performance**| Since modifications happen at the edge, close to the user, they can be faster than server-side rendering, improving metrics like TTFB. |
-
----
 
 ## 3. Practical Use Cases for Edge SEO
 
@@ -62,8 +55,6 @@ Edge SEO is a versatile tool for a wide range of technical SEO tasks.
 | **A/B Testing for SEO** | Split traffic to test the impact of SEO changes. Serve an original version to 50% of users/bots and a modified version to the other 50%. | Test whether changing a page's H1 tag improves its ranking for a target keyword. |
 | **Dynamic Rendering**| Serve a pre-rendered, static HTML version of a page to search engine bots while serving the client-side rendered version to users. | An alternative to server-side rendering for JavaScript-heavy sites. |
 | **Modify `robots.txt` or Security Headers**| Add or change directives on the fly without needing server access. | Block a new user-agent or add a Content Security Policy (CSP) header. |
-
----
 
 ## 4. A Basic Implementation Workflow (Example: Modifying a Title Tag)
 
@@ -100,8 +91,6 @@ Edge SEO is a versatile tool for a wide range of technical SEO tasks.
 4.  **Assign the Route:** Associate the worker script with the specific URL paths you want it to run on (e.g., `/blog/*`).
 5.  **Test and Monitor:** Use staging environments and monitor live traffic to ensure the worker is functioning as expected and not causing unintended side effects.
 
----
-
 ## 5. Risks and Considerations
 
 While powerful, Edge SEO is an advanced technique that requires careful management.
@@ -113,15 +102,11 @@ While powerful, Edge SEO is an advanced technique that requires careful manageme
 
 **Recommendation:** Edge SEO should be managed by experienced technical SEOs or developers. All changes should be version-controlled (e.g., using Git) and thoroughly tested.
 
----
-
 ## 6. Edge SEO and the Future: Agentic Edge SEO
 
 Edge SEO is the technological foundation for more advanced, dynamic SEO strategies like **Agentic SEO**. In the future, edge workers will not just apply static rules but will make intelligent, real-time decisions based on multiple signals (user intent, SERP trends, AI agent identity) to serve truly polymorphic, adaptive content.
 
 For more on this, see our guide on [Agentic SEO](2_agentic-seo.md).
-
----
 
 ## 7. Key Takeaways
 

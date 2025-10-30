@@ -13,7 +13,6 @@ related_topics:
   - "how-search-engines-work"
   - "semantic-seo"
 ---
-
 # Site Migrations and Canonicalization: Managing URLs and Preserving SEO Value
 
 ## Overview
@@ -23,8 +22,6 @@ related_topics:
 Together, these two concepts are at the heart of managing URL identity and preserving SEO equity during periods of change. A poorly executed migration can be catastrophic for organic traffic, while a solid canonicalization strategy prevents duplicate content issues and consolidates ranking signals.
 
 This guide covers the principles of canonicalization and provides a structured framework for planning and executing a successful site migration with minimal SEO risk.
-
----
 
 ## 1. Canonicalization: Solving the Duplicate Content Problem
 
@@ -60,8 +57,6 @@ On the page `https://example.com/page?id=123`, the canonical tag would point to 
 2. **Be Accurate:** The canonical URL must point to a page with genuinely duplicate or highly similar content.
 3. **Self-Reference:** It is a best practice for a page to have a self-referencing canonical tag (e.g., the canonical tag on `https://example.com/page` points to itself).
 4. **Use Only One Method:** Do not mix signals (e.g., setting one canonical in the sitemap and another in the HTML).
-
----
 
 ## 2. Site Migrations: A Framework for Managing Change
 
@@ -114,8 +109,6 @@ A successful migration follows a three-phase process: pre-migration, launch, and
 4. **Monitor Server Logs:** Analyze server logs to see how Googlebot is crawling the new site and if it is encountering any issues.
 5. **Update Backlinks:** Reach out to the most valuable external sites that link to your old URLs and ask them to update their links.
 
----
-
 ## 3. Tools for Migrations and Canonicalization Audits
 
 |Tool|Key Use Case|
@@ -124,8 +117,6 @@ A successful migration follows a three-phase process: pre-migration, launch, and
 |**Site Crawlers (Screaming Frog, Sitebulb)**|The workhorse for creating URL inventories, checking redirects, auditing canonical tags, and finding broken links.|
 |**Ahrefs / SEMrush / Moz**|Useful for benchmarking pre-migration performance, tracking keyword rankings, and identifying top pages by backlinks to prioritize.|
 |**Spreadsheet Software (Google Sheets, Excel)**|The most important tool for creating and managing your 301 redirect map.|
-
----
 
 ## 4. Key Takeaways
 

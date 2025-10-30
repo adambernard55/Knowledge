@@ -34,8 +34,6 @@ Understanding the language of your audience allows you to:
 
 This reference explains core keyword research concepts, the tools and metrics used in evaluation, and step‑by‑step methods for building a keyword strategy that supports search intent and long‑term topical authority.
 
----
-
 ## 1. What Is Keyword Research?
 
 Keyword research identifies the **queries** your target audience uses and measures their potential impact on your SEO goals.  It answers three fundamental questions:
@@ -48,8 +46,6 @@ Keyword research identifies the **queries** your target audience uses and measur
 
 Rather than focusing solely on single terms, modern keyword research emphasizes **topics**, **intent**, and **semantic relationships** between words—helping businesses align content around what users actually want to accomplish.
 
----
-
 ## 2. The Role of Keyword Research in SEO
 
 | SEO Phase | Connection to Keyword Research |
@@ -61,8 +57,6 @@ Rather than focusing solely on single terms, modern keyword research emphasizes 
 | **Measurement** | Provides benchmarks for visibility, rankings, and traffic potential. |
 
 Keyword data bridges **audience understanding** and **algorithmic optimization**—making it both a strategic and tactical cornerstone of SEO.
-
----
 
 ## 3. Types of Keywords
 
@@ -94,8 +88,6 @@ Understanding the categories of keywords helps structure your targeting.
 
 Balanced targeting across these layers ensures relevance without keyword overload.
 
----
-
 ## 4. Key Metrics in Keyword Research
 
 | Metric | Definition | Why It Matters |
@@ -108,8 +100,6 @@ Balanced targeting across these layers ensures relevance without keyword overloa
 | **Trend Data** | Interest over time, often via Google Trends. | Detects seasonality and emerging topics. |
 
 A balanced approach considers not just volume, but **intent, competition, and conversion value**.
-
----
 
 ## 5. The Keyword Research Process
 
@@ -157,8 +147,6 @@ Once target keywords are selected:
 - Optimize titles, meta tags, headings, and URLs  
 - Link related pages to strengthen topical relevance
 
----
-
 ## 6. Keyword Segmentation by Search Intent Funnel
 
 | Funnel Stage | Search Intent | Content Example | Goal |
@@ -169,8 +157,6 @@ Once target keywords are selected:
 | **Post‑Purchase** | Support / Loyalty | FAQs, troubleshooting, resources | Retain and nurture customers. |
 
 Mapping keywords to funnel stages ensures cohesive coverage of the buyer journey.
-
----
 
 ## 7. Tools for Keyword Research
 
@@ -185,8 +171,6 @@ Mapping keywords to funnel stages ensures cohesive coverage of the buyer journey
 
 When combined, these tools yield a 360° view of what your audience is searching for.
 
----
-
 ## 8. Best Practices for Effective Keyword Research
 
 1. **Start with intent, not volume** — aim for relevance over popularity.  
@@ -197,8 +181,6 @@ When combined, these tools yield a 360° view of what your audience is searching
 6. **Integrate across teams** — align SEO keywords with PPC, content, and social campaigns.  
 7. **Monitor performance** — track CTR, impressions, and conversion contribution.  
 
----
-
 ## 9. Common Mistakes to Avoid
 
 | Mistake | Why It’s a Problem | Better Practice |
@@ -208,8 +190,6 @@ When combined, these tools yield a 360° view of what your audience is searching
 | **Overvaluing Volume** | High‑volume terms may convert poorly. | Weigh conversion intent equally. |
 | **Using Obsolete Data** | Keyword metrics shift quickly. | Update datasets regularly. |
 | **Keyword Stuffing** | Hurts readability and triggers spam signals. | Maintain natural context and flow. |
-
----
 
 ## 10. Measuring Keyword Performance
 
@@ -233,8 +213,6 @@ Track post‑publication performance:
 
 Regular measurement informs when to refresh or expand your keyword strategy.
 
----
-
 ## 11. Integrating Keyword Research with Other SEO Fundamentals
 
 | Related Area | Integration Benefit |
@@ -246,8 +224,6 @@ Regular measurement informs when to refresh or expand your keyword strategy.
 | **Measurement & Analytics** | Links keywords to measurable KPIs and ROI. |
 
 Keyword research is not a one‑time project—it’s an ongoing system for understanding evolving search behavior.
-
----
 
 ## 12. Key Takeaways
 

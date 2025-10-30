@@ -30,8 +30,6 @@ It’s an essential step between **research** and **optimization**, ensuring tha
 
 This reference defines a framework for running quantitative and qualitative content audits — from inventory creation and data collection to evaluation metrics, scoring models, and actionable outcomes such as content refreshes, redirects, and consolidation.
 
----
-
 ## 1. Why Conduct a Content Audit?
 
 Search engines and users reward **fresh, relevant, and high‑performing content**. Over time, even top content can degrade due to new competition, shifting intent, or technical decay.  
@@ -47,8 +45,6 @@ A content audit allows teams to:
 
 A well-executed audit often leads to slimmer but stronger content ecosystems and measurable ranking improvements.
 
----
-
 ## 2. Types of Content Audits
 
 Different audit types apply depending on goals, scope, and resources:
@@ -63,8 +59,6 @@ Different audit types apply depending on goals, scope, and resources:
 
 Choose the scope that matches business effort capacity — partial audits between full reviews maintain ongoing optimization without burnout.
 
----
-
 ## 3. The Content Audit Framework: Four Phases
 
 A complete audit follows these sequential phases:
@@ -76,8 +70,6 @@ Inventory → Analysis → Evaluation → Action
 ```
 
 Each stage builds on the previous to transform data into actionable strategy.
-
----
 
 ## 4. Phase 1: Content Inventory
 
@@ -102,8 +94,6 @@ The inventory is a **complete list of URLs and assets** to be analyzed.
 | **E‑E‑A‑T Indicators** | Authorship, Original Media, External Citations |
 
 Organize this in a spreadsheet or content database for quantitative scoring.
-
----
 
 ## 5. Phase 2: Analysis
 
@@ -140,8 +130,6 @@ AI tools (Surfer Audit, Clearscope, MarketMuse) can:
 
 Human validation remains essential for final assessment accuracy.
 
----
-
 ## 6. Phase 3: Evaluation
 
 Turn performance and quality data into categorized insights.
@@ -165,8 +153,6 @@ Assign a 1–5 scale to core performance factors.
 
 Visualization dashboards (Google Data Studio, Looker, Airtable) make scoring trends easier to interpret.
 
----
-
 ## 7. Phase 4: Action Plan
 
 Categorize pages by the corrective or optimization strategy they require.
@@ -181,8 +167,6 @@ Categorize pages by the corrective or optimization strategy they require.
 | **Repurpose** | Adapt high‑value content into other formats (video, infographics). | High traffic but low conversions. |
 
 Maintain a **Content Action Log** to track task ownership, revision date, and follow-up performance checks.
-
----
 
 ## 8. Linking Audit Outcomes to Broader SEO Strategy
 
@@ -207,8 +191,6 @@ Audit → Optimize → Measure → Iterate
 
 ```
 
----
-
 ## 9. Recommended Tools
 
 | Task | Recommended Tools | Function |
@@ -219,8 +201,6 @@ Audit → Optimize → Measure → Iterate
 | **Backlink & Competitor Insight** | Ahrefs, SEMrush, Moz | Compare authority and content overlap |
 | **Visualization & Dashboards** | Google Data Studio, Airtable | Score visualization and tracking |
 
----
-
 ## 10. Common Pitfalls to Avoid
 
 | Pitfall | Why It’s a Problem | Solution |
@@ -230,8 +210,6 @@ Audit → Optimize → Measure → Iterate
 | **Neglecting Intent Alignment** | Pages target outdated or irrelevant keywords. | Re-map pages to current search intent. |
 | **Deleting Without Redirects** | Broken links harm user experience and authority. | Always apply 301 redirects when pruning. |
 | **Unclear Ownership** | Changes stall without accountability. | Assign page owners and due dates in an audit log. |
-
----
 
 ## 11. Measuring Audit Impact
 
@@ -247,8 +225,6 @@ Evaluate the success of your content audit over time.
 
 Visualize changes with dashboards or annotations in GA4 and Search Console.
 
----
-
 ## 12. Audit Frequency and Governance
 
 | Website Size | Recommended Audit Frequency | Notes |
@@ -258,8 +234,6 @@ Visualize changes with dashboards or annotations in GA4 and Search Console.
 | **Large (1,000+ pages)** | Continuous or quarterly | Required for news, eCommerce, or enterprise sites. |
 
 Maintain a **living content database** that automatically updates with new URLs to ensure consistency between audits.
-
----
 
 ## 13. Key Takeaways
 

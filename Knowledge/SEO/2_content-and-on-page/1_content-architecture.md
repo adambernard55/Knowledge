@@ -20,7 +20,6 @@ related_topics:
   - semantic-seo
   - eeat-signals
 ---
-
 # Content Architecture: Structuring Pages for SEO and User Experience
 
 ## Overview

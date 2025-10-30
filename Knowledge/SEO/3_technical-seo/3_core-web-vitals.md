@@ -12,7 +12,6 @@ related_topics:
   - "javascript-and-rendering"
   - "how-search-engines-work"
 ---
-
 # Core Web Vitals: Measuring and Optimizing User Experience
 
 ## Overview
@@ -22,8 +21,6 @@ related_topics:
 These metrics are part of Google's broader **Page Experience signals**, which are used as a factor in determining search rankings. While a good CWV score is not a substitute for high-quality, relevant content, it is a crucial component of technical SEO that directly impacts user satisfaction and can provide a competitive edge in search results.
 
 This guide defines each Core Web Vital, explains how to measure them, and provides actionable strategies for optimization.
-
----
 
 ## 1. The Three Core Web Vitals Metrics
 
@@ -65,8 +62,6 @@ As of 2024, the three active Core Web Vitals are Largest Contentful Paint (LCP),
 | Web fonts causing FOIT/FOUT | Preload fonts or use the `font-display` CSS property to control rendering behavior. |
 | Animations that trigger layout changes | Use CSS `transform` animations instead of properties that affect layout (e.g., `top`, `left`). |
 
----
-
 ## 2. Tools for Measuring Core Web Vitals
 
 CWV data comes from two sources: **Lab Data** (a controlled environment) and **Field Data** (real users). Google uses **field data** for ranking purposes.
@@ -78,8 +73,6 @@ CWV data comes from two sources: **Lab Data** (a controlled environment) and **F
 
 **Important:** A page must have sufficient traffic to generate field data in the CrUX report. The score reflects the performance of 75% of your users (the 75th percentile).
 
----
-
 ## 3. The Role of Core Web Vitals in SEO Ranking
 
 Core Web Vitals are a confirmed, but often subtle, ranking factor.
@@ -88,7 +81,6 @@ Core Web Vitals are a confirmed, but often subtle, ranking factor.
 -   **Relevance is King:** Excellent CWV scores will not help a page with poor or irrelevant content rank. Content quality and relevance remain the most important ranking factors.
 -   **Indirect SEO Benefits:** The primary benefit of optimizing CWV is improved user experience. This leads to lower bounce rates, higher engagement, and better conversion rates—all of which are positive signals for search engines.
 
----
 ## 4. Core Web Vitals in a Cross-Channel Context (SEO & PPC)
 
 Core Web Vitals are not just an SEO concern; they have a site-wide impact that affects other channels, particularly PPC.
@@ -99,15 +91,12 @@ Even if a landing page is created exclusively for PPC campaigns and is set to `n
 ### Performance Standards for PPC
 Ad clicks often have slightly higher latency than organic clicks due to the ad network's tracking and redirection processes. However, page speed is just as critical for PPC success, as it directly impacts **Google Ads Quality Score** and, consequently, your cost-per-click. Therefore, both SEO and PPC teams should be aligned on achieving good CWV scores for all landing pages.
 
----
 ## 5. A Practical Workflow for Optimization
 
 1.  **Measure:** Use **Google Search Console** to identify groups of URLs that need improvement. Use **PageSpeed Insights** to analyze a specific URL and get both lab and field data.
 2.  **Identify:** Use **Lighthouse** in Chrome DevTools to run audits and get specific diagnostic information about what is causing poor scores. The "Performance" panel can help you trace long tasks (for INP) or identify layout shifts (for CLS).
 3.  **Optimize:** Implement the necessary code and server-side changes based on the diagnostic data. Refer to the best practices outlined in Section 1.
 4.  **Monitor:** After deploying changes, continue to monitor your Core Web Vitals report in Google Search Console to confirm that your optimizations have improved the experience for real users.
-
----
 
 ## 6. Key Takeaways
 

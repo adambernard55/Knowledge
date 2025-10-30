@@ -13,7 +13,6 @@ related_topics:
   - "internal-linking"
   - "javascript-and-rendering"
 ---
-
 # Crawlability and Indexation: Ensuring Search Engine Access
 
 ## Overview
@@ -25,8 +24,6 @@ related_topics:
 
 Mastering these technical SEO pillars is non-negotiable. If a search engine cannot crawl or index your content, your on-page and off-page optimization efforts will have no impact. This guide covers the mechanisms, directives, and best practices for managing both.
 
----
-
 ## 1. The Process: Crawling vs. Indexing
 
 While intertwined, crawling and indexing are distinct, sequential steps.
@@ -37,8 +34,6 @@ While intertwined, crawling and indexing are distinct, sequential steps.
 | **Primary Goal** | To find all accessible URLs on your site. | To understand what a page is about and store it for retrieval in search results. |
 | **Key Influencers** | Site architecture, internal links, `robots.txt`, sitemaps, server speed. | Content quality, meta tags (`noindex`), canonical tags, HTTP status codes. |
 | **Analogy** | A librarian finding all the books in a library. | The librarian reading each book, categorizing it, and adding it to the card catalog. |
-
----
 
 ## 2. Key Factors That Influence Crawlability
 
@@ -52,8 +47,6 @@ A site's architecture and technical setup directly impact how efficiently search
 | **`robots.txt` File** | A text file that tells search bots which parts of your site they should or should not crawl. | Use it to block non-public sections (e.g., admin logins, staging sites), not to control indexing. |
 | **Server Performance** | The speed and reliability of your web server. | A slow or frequently down server will cause crawlers to time out, reducing the number of pages they can access. |
 
----
-
 ## 3. Key Factors That Influence Indexation
 
 Once a page is crawled, several factors determine whether it will be added to the index.
@@ -65,8 +58,6 @@ Once a page is crawled, several factors determine whether it will be added to th
 | **Canonical Tag** | An HTML tag that specifies the preferred version of a page with duplicate content. | Use `rel="canonical"` to consolidate indexing signals and avoid duplicate content issues. |
 | **HTTP Status Codes** | Server response codes that communicate the status of a page. | Ensure important pages return a `200 OK` status. Use `301` for permanent redirects. `404` (Not Found) and `410` (Gone) pages will eventually be de-indexed. |
 | **JavaScript Rendering** | How well search engines can process and see content that is loaded with JavaScript. | Ensure all critical content is renderable and not hidden behind complex user interactions. |
-
----
 
 ## 4. Managing Crawlers: The `robots.txt` File
 
@@ -91,8 +82,6 @@ Sitemap: [https://www.example.com/sitemap.xml](https://www.example.com/sitemap.
 ```
 **Important:** A `Disallow` rule does not prevent indexing. If a disallowed page has external links pointing to it, Google may still index it without crawling its content. Use the `noindex` meta tag to prevent indexing.
 
----
-
 ## 5. Directing Indexation: Meta Directives
 
 You can control indexation on a page-by-page basis using the meta robots tag in the `<head>` of your HTML.
@@ -110,8 +99,6 @@ You can control indexation on a page-by-page basis using the meta robots tag in 
 -   `noindex, follow`: Don't index this page, but trust the links on it. Useful for author pages or archives.
 -   `index, nofollow`: Index this page, but don't pass authority through its links. Useful for pages with user-generated content.
 
----
-
 ## 6. Auditing Crawlability and Indexation Issues
 
 Regular audits are crucial for maintaining a healthy technical foundation.
@@ -123,8 +110,6 @@ Regular audits are crucial for maintaining a healthy technical foundation.
 | **Server Log Analysis** | Shows exactly how crawlers like Googlebot are interacting with your site, including crawl frequency and any errors encountered. |
 | **Google's `site:` Operator** | A quick, informal check to see roughly how many pages are indexed (e.g., `site:example.com`). Not precise, but useful for spotting major issues. |
 
----
-
 ## 7. Crawl Budget Optimization (For Large Sites)
 
 **Crawl budget** is the number of URLs Googlebot can and wants to crawl on your site. For most small to medium-sized websites, this is not a concern. For large e-commerce or publisher sites with millions of pages, optimizing it is critical.
@@ -135,8 +120,6 @@ Regular audits are crucial for maintaining a healthy technical foundation.
 3.  **Use Sitemaps:** Guide crawlers to your most important pages.
 4.  **Manage Redirects:** Eliminate long redirect chains that waste crawl budget.
 5.  **Prune Low-Quality Content:** Removing or `noindex`ing thin content encourages Googlebot to focus on high-value pages.
-
----
 
 ## 8. Key Takeaways
 

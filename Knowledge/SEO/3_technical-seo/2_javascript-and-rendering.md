@@ -13,7 +13,6 @@ related_topics:
   - "how-search-engines-work"
   - "semantic-seo"
 ---
-
 # JavaScript SEO: Ensuring Your Content is Renderable and Indexable
 
 ## Overview
@@ -23,8 +22,6 @@ related_topics:
 The core challenge is ensuring that critical content and links, which are often loaded dynamically by JavaScript, are visible to search engine crawlers. A failure in rendering can make a page appear blank to a crawler, preventing it from being indexed and ranked.
 
 This guide explains how search engines process JavaScript, compares different rendering strategies, and outlines best practices for overcoming common JS-related SEO issues.
-
----
 
 ## 1. How Search Engines Process JavaScript
 
@@ -43,8 +40,6 @@ Google processes JavaScript-heavy pages in a two-wave process, which can introdu
 
 **The SEO Challenge:** The delay between Wave 1 and Wave 2 can be days or even weeks for less important sites. If your critical content is only visible after rendering, it will not be available for ranking immediately.
 
----
-
 ## 2. Rendering Strategies and Their SEO Impact
 
 The rendering strategy you choose for your website has a direct and significant impact on its SEO performance.
@@ -58,8 +53,6 @@ The rendering strategy you choose for your website has a direct and significant 
 
 **Recommendation:** For content-heavy websites, **SSR or SSG are the preferred methods** to ensure optimal SEO performance.
 
----
-
 ## 3. Common JavaScript SEO Issues and How to Fix Them
 
 | Issue | Description | How to Fix |
@@ -70,8 +63,6 @@ The rendering strategy you choose for your website has a direct and significant 
 | **`robots.txt` Blocking Resources** | The `robots.txt` file blocks crawlers from accessing critical `.js` or `.css` files needed to render the page. | Ensure all essential rendering resources are allowed for crawling by Googlebot. |
 | **Slow or Failing API Calls**| The page relies on external APIs to fetch content, but these APIs are slow or fail, leaving the rendered page incomplete. | Implement robust error handling and server-side timeouts. Use a loading state or fallback content. |
 
----
-
 ## 4. Best Practices for SEO-Friendly JavaScript
 
 1.  **Use SSR or SSG for Critical Pages:** This is the most effective way to solve the majority of JavaScript SEO issues.
@@ -80,8 +71,6 @@ The rendering strategy you choose for your website has a direct and significant 
 4.  **Put Critical Metadata in the Initial HTML:** Ensure `<title>`, `<meta name="description">`, and `<link rel="canonical">` are present in the server response.
 5.  **Allow Crawling of JS/CSS:** Do not block essential resource files in `robots.txt`.
 6.  **Implement Lazy Loading Carefully:** Use native lazy loading (`<img loading="lazy">`) for below-the-fold images, but ensure above-the-fold content is loaded immediately.
-
----
 
 ## 5. Tools for Auditing and Diagnosing JavaScript SEO Issues
 
@@ -92,8 +81,6 @@ The rendering strategy you choose for your website has a direct and significant 
 | **Chrome DevTools** | Compare "View Page Source" (initial HTML) with the "Inspect" tool (rendered DOM) to see what content is loaded by JavaScript. |
 | **Site Crawlers (Screaming Frog, Sitebulb)** | Enable JavaScript rendering in the crawler's settings to crawl your site as Googlebot would. This helps you find JS-dependent links and content. |
 | **WebPageTest / GTmetrix**| Analyze the waterfall chart to identify large or slow-loading JavaScript files that may be blocking rendering. |
-
----
 
 ## 6. Key Takeaways
 
