@@ -13,7 +13,6 @@ related_topics:
   - "ai-content-optimization"
   - "automation-workflows"
 ---
-
 # SEO Prompt Library for AI Chatbots
 
 ## Overview
@@ -21,8 +20,6 @@ related_topics:
 This document serves as a practical library of prompts for using AI chatbots like ChatGPT, Gemini, or Claude to accelerate common SEO tasks. These prompts are designed to be starting points that you can adapt and refine for your specific needs.
 
 The effectiveness of any prompt depends on providing clear context, defining a role for the AI, and specifying the desired output. For a deeper understanding of the principles behind these examples, please refer to our guide on [[advanced-prompt-engineering|Advanced Prompt Engineering]].
-
----
 
 ## 1. Keyword Research
 
@@ -52,8 +49,6 @@ The effectiveness of any prompt depends on providing clear context, defining a r
 > **Prompt:**
 > "For the primary topic 'sustainable yoga mats', generate a list of 15 long-tail keywords that a potential customer might ask. Frame at least 10 of them as direct questions (e.g., 'What is the most eco-friendly material for a yoga mat?')."
 
----
-
 ## 2. On-Page SEO and Content Creation
 
 ### Generate Title Tags and Meta Descriptions
@@ -76,8 +71,6 @@ The effectiveness of any prompt depends on providing clear context, defining a r
 >
 > Original Paragraph:
 > 'The proliferation of various materials in the manufacturing of yoga mats has resulted in a situation where consumers are frequently overwhelmed by the sheer number of available options, making the ultimate purchase decision a complex and often confusing endeavor.'"
-
----
 
 ## 3. Technical SEO
 
@@ -114,8 +107,6 @@ The effectiveness of any prompt depends on providing clear context, defining a r
 >
 > Include the `x-default` tag pointing to the English version."
 
----
-
 ## 4. Link Building and Outreach
 
 ### Brainstorm Linkable Assets
@@ -138,21 +129,5 @@ The effectiveness of any prompt depends on providing clear context, defining a r
 >
 > The tone should be helpful, not demanding. The goal is to inform them of the broken link and suggest my resource as a useful replacement."
 
----
 
-### **Minor Updates to Existing Files**
-
-To make your knowledge base even more cohesive, add small pointers to this new library in your existing tactical files.
-
-**1. In `ai-keyword-research.md`:**
-*   At the end of the "Practical Workflow" section, add:
-    > "For specific prompt examples to use in this workflow, see our [[10_seo-prompt-library|SEO Prompt Library]]."
-
-**2. In `ai-content-optimization.md`:**
-*   In the "Readability and Tone Adjustment" section, add:
-    > "For ready-to-use prompts for rewriting and tone adjustment, refer to the [[10_seo-prompt-library|SEO Prompt Library]]."
-
-**3. In `schema-and-rich-results.md`:**
-*   In the "Implementation Methods" section, add a note:
-    > "You can use AI tools to quickly generate the JSON-LD code for various schema types. For examples, see our [[10_seo-prompt-library|SEO Prompt Library]]."
 

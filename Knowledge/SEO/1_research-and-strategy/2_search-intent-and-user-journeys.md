@@ -193,7 +193,13 @@ Reassess quarterly whether each page still aligns with evolving intent and journ
 
 Consistency in coverage across intents fuels both rankings and conversion momentum.
 
-## 10. Best Practices and Optimization Checklist
+## 10. Evolving Search Behaviors: Social and Visual Search for Local
+
+While traditional search engines are the primary source for local queries, user behavior is diversifying. Younger demographics, in particular, are increasingly using social media platforms like TikTok and Instagram as search engines for local discovery (e.g., finding restaurants, shops, and experiences).
+
+While optimizing for these platforms is a separate discipline, analyzing how your business is discovered on them can provide valuable insights into the visual and conversational "keywords" your audience is using.
+
+## 11. Best Practices and Optimization Checklist
 
 **Intent Research**
 - [ ] Review SERP results for every main keyword cluster  
@@ -210,7 +216,7 @@ Consistency in coverage across intents fuels both rankings and conversion moment
 - [ ] Update CTAs and content as users evolve  
 - [ ] Expand informational pages into commercial clusters over time  
 
-## 11. Key Takeaways
+## 12. Key Takeaways
 
 1. **Search intent determines what content ranks.** Aligning with intent ensures your pages satisfy user expectations.  
 2. **Users move through journeys.** Keyword strategy must reflect awareness, consideration, and decision stages.  

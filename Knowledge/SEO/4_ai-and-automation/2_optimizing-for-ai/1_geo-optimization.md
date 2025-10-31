@@ -22,8 +22,6 @@ related_topics:
 
 With GEO, the primary objective is to make your content so authoritative, structured, and trustworthy that AI models select it as a foundational piece of information when synthesizing a direct answer for a user. This guide explains how generative engines work, the core principles of GEO, and the actionable steps to increase your content's visibility in this new search paradigm.
 
----
-
 ## 1. SEO vs. GEO: A Shift in Focus
 
 While built on the same foundation, GEO requires a shift in mindset and strategic focus. AI models process information differently than traditional crawlers, prioritizing machine-readable structure and granular facts.
@@ -35,8 +33,6 @@ While built on the same foundation, GEO requires a shift in mindset and strategi
 | **Optimal Content**| Long-form, comprehensive articles. | Structured, modular, and granular "citable" facts. |
 | **Optimal Format**| Blog posts and guides. | FAQ pages, product data, bulleted lists, and tables. |
 | **Source Correlation**| Historically high overlap with top organic search results. | Sources are becoming more diverse; overlap with the top 10 results has reportedly decreased significantly. |
-
----
 
 ## 2. How Generative Engines Find and Evaluate Information
 
@@ -56,8 +52,6 @@ Google has confirmed that the core signals for evaluating good information are "
 -   Overall **helpfulness and authoritativeness** as defined by frameworks like E-E-A-T.
 
 GEO is not about finding new loopholes; it's about excelling at the fundamentals of SEO for a machine-driven audience.
-
----
 
 ## 3. Core GEO Optimization Principles
 
@@ -80,17 +74,21 @@ Make it easy for the AI to understand *what* your content is about and how it re
 -   **Implement Robust Schema:** Use `FAQPage`, `HowTo`, `Product`, and other relevant schema types to explicitly define your content's purpose.
 -   **Focus on Entities:** Consistently use and define key entities (people, places, concepts) related to your topic. Ensure your brand's own entity information is consistent across the web.
 
----
-
 ## 4. Business Implications and Strategic Focus
 
 -   **Primary Goal (Current): Consumer Awareness.** The immediate objective for most brands is to have their products or services mentioned when a user asks a relevant question. The focus is on influencing consideration at the top of the funnel.
 -   **ROI is a Long-Term Play:** Many companies are in an early learning phase. The focus is on establishing a presence and building authority in this new channel, with direct ROI measurement being a secondary, future goal.
 -   **Future of Commerce:** Partnerships between AI companies and retailers signal a future where GEO will directly drive sales, allowing users to shop and transact within a chat interface.
 
+## 5. GEO for Local Search: The Role of Google Business Profile
+
+For queries with local intent, Google's AI Overviews heavily rely on data from trusted, structured sources. **Your Google Business Profile (GBP) is one of the most important of these sources.**
+
+Studies have shown that for local searches (e.g., booking accommodations or finding experiences), GBP information like reviews, hours, and location data is frequently surfaced directly in the AI-generated answer. Therefore, a fully optimized and actively managed GBP is one of the most effective strategies for local GEO.
+
 ---
 
-## 5. Key Takeaways
+## 6. Key Takeaways
 
 1.  **GEO is the evolution of SEO, not a replacement.** It is built on the same foundational signals of quality, relevance, and authority.
 2.  The goal of GEO is to be **cited by AI**, which requires a focus on structured, granular, and machine-readable content.
