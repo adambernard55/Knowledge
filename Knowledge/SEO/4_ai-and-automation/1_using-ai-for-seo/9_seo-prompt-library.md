@@ -19,7 +19,7 @@ related_topics:
 
 This document serves as a practical library of prompts for using AI chatbots like ChatGPT, Gemini, or Claude to accelerate common SEO tasks. These prompts are designed to be starting points that you can adapt and refine for your specific needs.
 
-The effectiveness of any prompt depends on providing clear context, defining a role for the AI, and specifying the desired output. For a deeper understanding of the principles behind these examples, please refer to our guide on [[advanced-prompt-engineering|Advanced Prompt Engineering]].
+The effectiveness of any prompt depends on providing clear context, defining a role for the AI, and specifying the desired output. For a deeper understanding of the principles behind these examples, please refer to our guide on [[05_advanced-prompt-engineering|Advanced Prompt Engineering]].
 
 ## 1. Keyword Research
 

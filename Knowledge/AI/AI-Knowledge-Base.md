@@ -7,10 +7,11 @@ TABLE WITHOUT ID key AS "Table of Contents" FROM "Knowledge/AI" GROUP BY file.fo
 Knowledge/AI/
 ├── 0_fundamentals/
 ├── 1_methods-and-systems/
-├── 2_applications-and-industries/
-├── 3_tools-and-platforms/
-├── 4_ethics-and-governance/
-└── 5_future-trends/
+├── 2_applications/
+├── 3_platforms/
+├── 4_tools/
+├── 5_ethics-and-governance/
+└── 6_future-trends/
 ```
 
 Each number indicates conceptual progression.  
