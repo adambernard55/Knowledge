@@ -3,21 +3,33 @@
 TABLE WITHOUT ID key AS "Table of Contents" FROM "Knowledge/AI" GROUP BY file.folder SORT key ASC
 ```
 
-```
+
 Knowledge/AI/
 ├── 0_fundamentals/
-├── 1_methods-and-systems/
-├── 2_applications/
-├── 3_platforms/
-├── 4_tools/
+├── 1_agents/
+│   ├── toolkits/
+│   └── core-agent-concepts.md  # Depict both `toolkits` and primary AI agent concepts.
+├── 2_methods-and-systems/
+│   ├── architectures-and-llms.md
+│   ├── embeddings-and-vectorization.md
+│   ├── training-and-finetuning.md
+│   └── more-content.md
+├── 3_applications-and-industries/
+│   ├── marketing/
+│   ├── business-operations/
+│   ├── creative-industries/
+│   └── sector-overview.md
+├── 4_tools-and-platforms/
+│   ├── overview.md
+│   ├── subdirectory-subject1.md
+│   ├── subdirectory-subject2.md
+│   └── more-content.md
 ├── 5_ethics-and-governance/
-└── 6_future-trends/
-```
+└── 6_future-trends/```
 
 Each number indicates conceptual progression.  
 Here’s how current directories map to the new structure:
 
----
 
 ### **0_fundamentals/**
 
