@@ -1,7 +1,4 @@
 
-
----
-
 ## **Akkio**
 
 **Primary Category(ies):** Analytics & Data Insights / Marketing Automation (Predictive AI) / Productivity & Workflow
